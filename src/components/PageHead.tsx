@@ -1,0 +1,22 @@
+const Page_Head = ({}) => {
+
+    return(
+
+        <div>
+            <header>
+            <h1 className="etiqueta">
+                Buses Universidad Nacional De Costa Rica
+                <img className="mante" src="mantenimiento.png" alt="Not Found" />
+            </h1>
+            </header>
+
+        </div>
+
+
+
+
+
+    )
+
+}
+export default Page_Head
