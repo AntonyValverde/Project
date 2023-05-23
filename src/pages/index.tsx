@@ -67,7 +67,7 @@ export default function Home() {
       </footer>
 
       {/**/}
-
+      <script src='script.js'></script>
     </>
   )
 }

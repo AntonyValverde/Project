@@ -2,13 +2,21 @@ import Page_Footer from "../PageFooter"
 import React, { useState } from "react";
 
 
-const Units_Section = ({ }) => {
-    const [showForm, setShowForm] = useState(false);
+const Units_Section = ({}) => {
+    
+    {/*const wrapper = document.querySelector('.wrapper');
+    
+    const btnPopup = document.querySelector('btnLogin-popup');
 
-    const handleButtonClick = () => {
-        setShowForm(!showForm);
-    };
+    btnPopup?.addEventListener('click', ()=> {
+        
+        wrapper?.classList.add('active');
+    });*/}
+
     return (
+
+
+        
         <div>
             <section >
 
@@ -49,8 +57,20 @@ const Units_Section = ({ }) => {
                                 </div>
                                 <div className="input-box">
                                     <span className="icon"></span>
-                                    <input type="placa" />
-                                    <label>Placa</label>
+                                    <input type="modelo" />
+                                    <label>Modelo</label>
+
+                                </div>
+                                <div className="input-box">
+                                    <span className="icon"></span>
+                                    <input type="marca" />
+                                    <label>Marca</label>
+
+                                </div>
+                                <div className="input-box">
+                                    <span className="icon"></span>
+                                    <input type="año" />
+                                    <label>Año</label>
 
                                 </div>
                                 <div className="input-box">
@@ -61,21 +81,25 @@ const Units_Section = ({ }) => {
                                 </div>
                                 <div className="input-box">
                                     <span className="icon"></span>
-                                    <input type="placa" />
-                                    <label>Placa</label>
+                                    <input type="estado" />
+                                    <label>Estado</label>
 
                                 </div>
                                 <div className="input-box">
                                     <span className="icon"></span>
-                                    <input type="placa" />
-                                    <label>Placa</label>
+                                    <input type="capacidad" />
+                                    <label>Capacidad</label>
 
                                 </div>
                                 <div className="input-box">
                                     <span className="icon"></span>
-                                    <input type="placa" />
-                                    <label>Placa</label>
+                                    <input type="colores" />
+                                    <label>Color</label>
 
+                                </div>
+                                <div className="remember-forgot">
+                                    <label><input type="checkbox" />Disponible</label>
+                                    <button className="btnLogin-popup">Registrar</button>
                                 </div>
                             </form>
 
@@ -84,7 +108,7 @@ const Units_Section = ({ }) => {
                 </article>
                 <article>
                     <div className="form-button-container">
-
+                        
                     </div>
                     <div className="buttonCRUDmodificar">
                         <button>MODIFICAR</button>
