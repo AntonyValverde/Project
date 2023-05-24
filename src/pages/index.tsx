@@ -5,7 +5,7 @@ import Page_Head from '@/components/PageHead'
 import { Josefin_Sans } from 'next/font/google'
 import Page_nav from '@/components/PageNav'
 import Link from 'next/link'
-
+import html2canvas from 'html2canvas';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -25,7 +25,7 @@ export default function Home() {
           <h3 className="title">Información</h3>
           <img className="images" src="/unidades.png" alt="Not Found" />
           <hr />
-          <Link href="/addressUnits" className='button'>
+          <Link href="/indexUnits" className='button'>
 
             Unidades Disponibles
 
@@ -52,7 +52,7 @@ export default function Home() {
             <h3 className="title">Información</h3>
             <img className="images" src="/ajuste.png" alt="Not Found" />
             <hr/>
-            <Link href="/addressInven" className="button">
+            <Link href="/indexInven" className="button">
           
               Inventario Repuesto
             </Link>
@@ -67,7 +67,7 @@ export default function Home() {
       </footer>
 
       {/**/}
-      <script src='script.js'></script>
+      
     </>
   )
 }
