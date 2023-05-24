@@ -6,11 +6,10 @@ import React, { useState } from "react";
 
 
 
+export default function indexUnits () {
 
-const Units_Section = ({ }) => {
 
 
-    {/**/ }
 
     return (
         <div>
@@ -55,4 +54,3 @@ const Units_Section = ({ }) => {
 
     )
 }
-export default Units_Section

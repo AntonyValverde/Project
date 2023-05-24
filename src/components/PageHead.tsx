@@ -6,7 +6,7 @@ const Page_Head = ({}) => {
             <header>
             <h1 className="etiqueta">
                 Buses Universidad Nacional De Costa Rica
-                <img className="mante" src="mantenimiento.png" alt="Not Found" />
+                <img className="mante" src="/img/mantenimiento.png" alt="Not Found" />
             </h1>
             </header>
 

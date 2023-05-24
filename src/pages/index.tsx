@@ -13,7 +13,6 @@ export default function Home() {
   return (
     <>
       <header>
-        {/*<Unidades></Unidades>*/}
         <Page_Head></Page_Head>
       </header>
       <nav>
@@ -23,51 +22,38 @@ export default function Home() {
 
         <div className="column">
           <h3 className="title">Información</h3>
-          <img className="images" src="/unidades.png" alt="Not Found" />
+          <img className="images" src="/img/unidades.png" alt="Not Found" />
           <hr />
-          <Link href="/indexUnits" className='button'>
-
-            Unidades Disponibles
-
+          <Link href="/indexUnits" className='button'>Registro Unidades
           </Link>
         </div>
         <div className="column">
           <h3 className="title">Información</h3>
-          <img className="images" src="/reparacion.png" alt="Not Found" />
+          <img className="images" src="/img/calendario.png" alt="Not Found" />
           <hr />
-          <a href="#" className="button">Mantenimiento Unidades</a>
+          <a href="#" className="button">Citas Unidades</a>
         </div>
         <div className="column">
           <h3 className="title">Información</h3>
-          <img className="images" src="/calendario.png" alt="Not Found" />
+          <img className="images" src="/img/reparacion.png" alt="Not Found" />
           <hr />
-          <Link href="/addressCites" className='button'>
-
-            Cita Unidades
-
+          <Link href="/addressCites" className='button'>Mantenimiento Unidades
           </Link>
         </div>
 
         <div className="column">
             <h3 className="title">Información</h3>
-            <img className="images" src="/ajuste.png" alt="Not Found" />
+            <img className="images" src="/img/ajuste.png" alt="Not Found" />
             <hr/>
-            <Link href="/indexInven" className="button">
-          
-              Inventario Repuesto
+            <Link href="/indexInven" className="button">Inventario Repuesto
             </Link>
 
           </div>
       </section>
 
-
-
       <footer>
         <Page_Footer></Page_Footer>
       </footer>
-
-      {/**/}
-      
     </>
   )
 }

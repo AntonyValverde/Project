@@ -1,7 +1,7 @@
 import Page_Footer from "@/components/PageFooter"
 import Page_Head from "@/components/PageHead"
 
-const idInvent = ({ }) => {
+export default function indexInven () {
 
   return (
     <>
@@ -73,4 +73,3 @@ const idInvent = ({ }) => {
   )
 
 }
-export default idInvent

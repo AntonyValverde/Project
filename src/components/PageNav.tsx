@@ -3,7 +3,7 @@ const Page_nav =({}) =>{
         <div>
             <nav>
                 <h2 className="title2">Mantenimiento De Buses
-                <img className="busLogo" src="/LogoBus.png" alt="Not Found" />
+                <img className="busLogo" src="/img/LogoBus.png" alt="Not Found" />
                 </h2>
                 
             </nav>

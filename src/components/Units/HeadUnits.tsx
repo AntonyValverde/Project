@@ -5,7 +5,7 @@ const Units_head = ({ }) => {
                 
                 <h1 className="etiqueta">Unidades Disponibles
 
-                    <img className="mante" src="/disponible.png" alt="imagen" />
+                    <img className="mante" src="/img/disponible.png" alt="imagen" />
                 </h1>
                 
             </header>
