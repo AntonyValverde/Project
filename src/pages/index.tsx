@@ -18,7 +18,7 @@ export default function Home() {
       <nav>
         <Page_nav></Page_nav>
       </nav>
-      <section className="contain flex text">
+      <section className="container flex text">
 
         <div className="column">
           <h3 className="title">Información</h3>
@@ -31,7 +31,8 @@ export default function Home() {
           <h3 className="title">Información</h3>
           <img className="images" src="/img/calendario.png" alt="Not Found" />
           <hr />
-          <a href="#" className="button">Citas Unidades</a>
+          <Link href="/indexCita" className="button">Citas Unidades</Link>
+
         </div>
         <div className="column">
           <h3 className="title">Información</h3>

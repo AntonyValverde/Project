@@ -11,7 +11,7 @@ export default function indexInven () {
       <article className="columnTable">
         <div>
           <input className="search" type="text" id="Buscar" name="Buscar" placeholder="Buscar" />
-          <img className="imgSearch" src="/img/search.png" alt="Not Found" />
+           
         </div>
         <table className="tabla">
           <thead>

@@ -79,7 +79,7 @@ const FormButton = () => {
         <button className="butonCenter" onClick={botonClick} >Agregar</button>
         {desplegado && <div className="contenido-desplegado">
           
-          <article ref={formularioRef} className="containerDos" id="formulario">
+          <article ref={formularioRef} className="containerTwo" id="formulario">
             <div className="wrapper">
               <div className="form-box login">
                 <h2>Units</h2>
