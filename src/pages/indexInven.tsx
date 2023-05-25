@@ -1,18 +1,25 @@
 import Page_Footer from "@/components/PageFooter"
 import Page_Head from "@/components/PageHead"
+import Page_nav from "@/components/PageNav"
 
-export default function indexInven () {
+export default function indexInven() {
 
   return (
     <>
       <div>
         <Page_Head></Page_Head>
       </div>
+      <div>
+        <h2 className="title2">Repuestos De Inventario
+          <img className="busLogo" src="/img/busNav.png" alt="Not Found" />
+        </h2>
+      </div>
       <article className="columnTable">
         <div>
           <input className="search" type="text" id="Buscar" name="Buscar" placeholder="Buscar" />
-           
+
         </div>
+
         <table className="tabla">
           <thead>
             <tr>
