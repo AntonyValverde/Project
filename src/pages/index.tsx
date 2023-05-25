@@ -37,7 +37,7 @@ export default function Home() {
           <h3 className="title">Información</h3>
           <img className="images" src="/img/reparacion.png" alt="Not Found" />
           <hr />
-          <Link href="/addressCites" className='button'>Mantenimiento Unidades
+          <Link href="/indexMante" className='button'>Mantenimiento Unidades
           </Link>
         </div>
 
