@@ -8,9 +8,6 @@ import React, { useState } from "react";
 
 export default function indexUnits () {
 
-
-
-
     return (
         <div>
             <div>

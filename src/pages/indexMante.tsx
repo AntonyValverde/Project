@@ -1,8 +1,15 @@
 import Page_Footer from '@/components/PageFooter';
+import Page_Head from '@/components/PageHead';
 import Typewriter from 'typewriter-effect';
 
 export default function indexMante () {
     return (
+        <>
+        <div>
+        
+        <Page_Head></Page_Head>
+        </div>
+        
         <article >
              {/*para hacer que escriba solo  en el h4 
             Corremos en consola   npm install typewriter-effect y despues se llama ejemplo fila 2*/}
@@ -123,6 +130,6 @@ export default function indexMante () {
             </div>
             <Page_Footer></Page_Footer>
         </article>
-
+        </>
     )
 }

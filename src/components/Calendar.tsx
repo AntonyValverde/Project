@@ -76,9 +76,10 @@ const Calendar: React.FC<TableProps> = ({ data }) => {
       <header>
         <Page_Head></Page_Head>
       </header>
-
-      <div className='contenert'>
-        <img className="image-container" src="/img/busEtiqueta.png" alt="Not Found" />
+      <div>
+        <h2 className="title2">Citas de Mantenimiento
+          <img className="busLogo" src="/img/busEtiqueta.png" alt="Not Found" />
+        </h2>
       </div>
 
       <div className="container mt-5">
@@ -114,9 +115,9 @@ const Calendar: React.FC<TableProps> = ({ data }) => {
           </div>
         </div>
         <hr />
-        <div className='mt-5'>
-          <table className='table table-striped shadow'>
-            <thead className='table-dark'>
+       
+          <table className='table-cites'>
+            <thead>
               <tr>
                 <th>Id_unidad</th>
                 <th>Modelo</th>
@@ -146,7 +147,6 @@ const Calendar: React.FC<TableProps> = ({ data }) => {
           </table>
         </div>
 
-      </div>
       <footer>
         <Page_Footer></Page_Footer>
       </footer>

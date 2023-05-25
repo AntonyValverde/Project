@@ -70,7 +70,7 @@ export default function indexInven() {
         </table>
       </article>
       <div>
-        <button className="buttonSearch" type="submit">Proforma</button>
+        <button className="buttonSearch" type="submit">Generar Proforma</button>
       </div>
       <footer>
         <Page_Footer></Page_Footer>
