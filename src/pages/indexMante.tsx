@@ -1,7 +1,6 @@
 import Page_Footer from '@/components/PageFooter';
 import Page_Head from '@/components/PageHead';
 import Typewriter from 'typewriter-effect';
-
 export default function indexMante () {
     return (
         <>

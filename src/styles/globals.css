@@ -895,14 +895,30 @@ body {
   border-radius: 1vw;
 }
 
-@media (max-width: 768px) {
-  /*indexMante*/
+/*@media (max-width: 768px) {
+  /*indexMante*//*
   .SecTable {
-    width: 90vw;
+    width: 100%;
     margin: 5vw auto 0;
     font-size: 14px;
   }
+}*/
+@media (max-width: 768px) { /*indexMante*/
+  .SecTable {
+    font-size: 10px;
+    width: 95%;
+    margin-left: 2.5%;
+  }
+  .SecTable th,
+  .SecTable td {
+    padding: 5px;
+  }
+
+  .SecTable th {
+    font-size: 10px;
+  }
 }
+
 
 .table1 {
   /*indexMante*/
@@ -918,6 +934,7 @@ body {
   /*indexMante*/
   .table1 {
     font-size: 3vw;
+    
   }
 }
 
@@ -1266,13 +1283,13 @@ td {
 
 .btn.btn-primary.me-md-2.img {
   display: inline-block;
-  width: 20px; /* Ajusta el ancho de la imagen según tus necesidades */
-  height: 20px; /* Ajusta el alto de la imagen según tus necesidades */
+  width: 20px; 
+  height: 20px; 
   background-image: url("/lupa.png");
-  background-size: cover; /* Ajusta el tamaño de la imagen */
+  background-size: cover; 
   background-repeat: no-repeat;
   background-position: center center;
-  margin-right: 5px; /* Ajusta el espaciado entre la imagen y el texto según tus necesidades */
+  margin-right: 5px; 
 }
 .btn.btn-primary.me-md-2:hover {
   color: #fff;
