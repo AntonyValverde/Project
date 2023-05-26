@@ -900,6 +900,7 @@ body {
   .SecTable {
     width: 90vw;
     margin: 5vw auto 0;
+    font-size: 14px;
   }
 }
 
@@ -1121,7 +1122,7 @@ td {
 }
 .table-cites th,
 .table-cites td {
-  /*indexInve*/
+
   border: 1px solid #ddd;
   padding: 8px;
 
@@ -1129,20 +1130,20 @@ td {
 }
 
 .table-cites th {
-  /*indexInve*/
+
   background-color: #353535;
   color: white;
 }
 
 .table-cites tr:nth-child(even) {
-  /*indexInve*/
+
   background-color: #353535;
 }
 @media (max-width: 768px) {
   .table-cites {
-    font-size: 14px;
+    font-size: 10px;
     width: 95%;
-    margin-left: 2%;
+    margin-left: 2.5%;
   }
   .table-cites th,
   .table-cites td {
@@ -1153,6 +1154,15 @@ td {
     font-size: 10px;
   }
 }
+@media (max-width: 576px) {
+  /*indexInve*/
+ 
+  .table-cites {
+    font-size: 10px;
+    width: 95%;
+    margin-left: 2.5%;
+    }
+  }
 
 .row {
   display: flex;
