@@ -31,10 +31,12 @@ body {
   /*index*/
   display: flex;
 }
+
 .text {
   /*index*/
   text-align: center;
 }
+
 .column {
   /*index*/
   background: rgb(238, 230, 230);
@@ -48,6 +50,7 @@ body {
   border-radius: 8px;
   box-shadow: 8px 8px 5px #888;
 }
+
 .button {
   /*index*/
   background: #284b63;
@@ -68,6 +71,7 @@ body {
   margin-inline: 20px;
   border-radius: 2px;
 }
+
 .title {
   /*index*/
   font-family: "Josefin_Sans";
@@ -107,6 +111,7 @@ body {
     font-size: 16px;
   }
 }
+
 /* Responsive Styles index */
 @media (max-width: 480px) {
   .column {
@@ -128,6 +133,7 @@ body {
   margin-left: 95%;
   border-radius: 2px;
 }
+
 .etiqueta {
   /*Head*/
   background-color: #353535;
@@ -153,6 +159,7 @@ body {
     padding: 10px;
   }
 }
+
 /* Responsive Styles head */
 @media (max-width: 480px) {
   .mante {
@@ -174,6 +181,7 @@ body {
   margin-right: 0px;
   font-family: "Josefin_Sans";
 }
+
 .contact {
   /*footer*/
   font-family: "Josefin_Sans";
@@ -181,12 +189,14 @@ body {
   margin-inline: 35px;
   color: #d9d9d9;
 }
+
 .contacts {
   /*footer*/
   width: 30px;
   height: 30px;
   margin-top: -30px;
 }
+
 .parr {
   /*footer*/
   font-family: "Josefin_Sans";
@@ -195,12 +205,14 @@ body {
   margin-top: 5px;
   color: #d9d9d9;
 }
+
 .correo {
   /*footer*/
   width: 30px;
   height: 30px;
   margin-top: -30px;
 }
+
 .copy {
   /*footer*/
   font-family: "Josefin_Sans";
@@ -208,6 +220,7 @@ body {
   text-align: center;
   color: #d9d9d9;
 }
+
 .ubicacion {
   /*footer*/
   width: 30px;
@@ -215,6 +228,7 @@ body {
   margin-right: 70px;
   margin-top: 5px;
 }
+
 .text4 {
   /*footer*/
   font-family: "Josefin_Sans";
@@ -223,12 +237,14 @@ body {
   margin-top: -25px;
   color: #d9d9d9;
 }
+
 /* Responsive Styles footer*/
 @media (max-width: 768px) {
   .PageFooter {
     margin-top: 100px;
   }
 }
+
 /* Responsive Styles footer*/
 @media (max-width: 480px) {
   .PageFooter {
@@ -250,6 +266,7 @@ body {
   text-align: center;
   padding-bottom: 25px;
 }
+
 .busLogo {
   /*Nav*/
   width: 720px;
@@ -271,6 +288,7 @@ body {
     margin: 0 auto;
   }
 }
+
 /* Responsive Styles Nav*/
 @media (max-width: 480px) {
   .title2 {
@@ -285,18 +303,22 @@ body {
 }
 
 .cuadro {
+  /*indexUnits*/
+  position: relative;
   background-color: #3c6e71;
   width: valor;
   height: 50px;
 }
 
 .text {
+  /*indexUnits*/
   color: #333;
   font-size: 30px;
   font-family: "Josefin_Sans";
 }
 
 .busEtiqueta {
+  /*indexUnits*/
   width: 600px;
   height: 200px;
   margin-inline: 30%;
@@ -355,6 +377,60 @@ body {
   height: 450px;
 }
 
+.image {
+  display: flex;
+  width: 600px;
+  height: 430px;
+  
+}
+
+.image img {
+  /*indexUnits*/
+  width: 0px;
+  flex-grow: 1;
+  object-fit: cover;
+  opacity: 0.8;
+  transition: 0.5s ease;
+
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.image img:hover {
+  /*indexUnits*/
+  cursor: pointer;
+  width: 300px;
+  opacity: 1;
+  filter: contrast(120%);
+}
+
+
+
+.image.flipped {
+  transform: rotateY(180deg);
+}
+
+.container-content {
+  width: 0px;
+  flex-grow: 1;
+  object-fit: cover;
+  opacity: 0.8;
+  transition: 0.5s ease;
+
+  position: absolute;
+  background-color: #f1f1f1;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.container-content.visible {
+  display: flex;
+  opacity: 1;
+}
+
 /* Responsive Styles indexUnits*/
 @media (max-width: 768px) {
   .photos {
@@ -379,6 +455,7 @@ body {
     margin-left: 5%;
   }
 }
+
 /* Responsive Styles indexUnits*/
 @media (max-width: 480px) {
   .photos {
@@ -406,10 +483,12 @@ body {
 }
 
 .containerTwo {
+  /*indexUnits*/
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Opcional: ajusta la altura al 100% del viewport */
+  height: 100vh;
+  /* Opcional: ajusta la altura al 100% del viewport */
   margin: 0 auto;
   width: 80%;
   position: center;
@@ -418,6 +497,7 @@ body {
 }
 
 .description {
+  /*indexUnits*/
   font-family: "Josefin_Sans";
   font-size: 20px;
   text-align: center;
@@ -426,6 +506,7 @@ body {
 }
 
 .buttonCRUDagregar {
+  /*indexUnits*/
   background: #3a9950;
   color: #d9d9d9;
   display: block;
@@ -443,10 +524,12 @@ body {
 }
 
 .form-button-container {
+  /*indexUnits*/
   position: relative;
 }
 
 .form-button {
+  /*indexUnits*/
   background-color: #2196f3;
   color: white;
   border: none;
@@ -456,6 +539,7 @@ body {
 }
 
 .form {
+  /*indexUnits*/
   display: none;
   position: absolute;
   top: 50px;
@@ -467,11 +551,13 @@ body {
 }
 
 .form label {
+  /*indexUnits*/
   display: block;
   margin-bottom: 10px;
 }
 
 .form input {
+  /*indexUnits*/
   width: 100%;
   padding: 10px;
   margin-bottom: 20px;
@@ -479,41 +565,13 @@ body {
 }
 
 .form button[type="submit"] {
+  /*indexUnits*/
   background-color: #4caf50;
   color: white;
   border: none;
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
-}
-
-.calendar {
-  width: 300px;
-  border: 1px solid #ccc;
-  font-family: Arial, sans-serif;
-}
-
-.calendar-header {
-  background-color: #f2f2f2;
-  text-align: center;
-  padding: 10px;
-}
-
-.calendar-body {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  grid-gap: 1px;
-}
-
-.calendar-day {
-  background-color: #fff;
-  border: 1px solid #ccc;
-  padding: 10px;
-  text-align: center;
-}
-
-.calendar-day:hover {
-  background-color: #f2f2f2;
 }
 
 /*indexInve*/
@@ -573,6 +631,7 @@ body {
   margin-left: 77vw;
   margin-top: 0vw;
 }
+
 .buttonSearch:hover {
   /*indexInve*/
   background: #3c6e71;
@@ -581,6 +640,7 @@ body {
 /* Responsive Styles indexInve*/
 
 @media (max-width: 768px) {
+
   /*indexInve*/
   .search {
     font-size: 16px;
@@ -602,6 +662,7 @@ body {
 }
 
 @media (max-width: 576px) {
+
   /*indexInve*/
   .search {
     font-size: 14px;
@@ -635,6 +696,7 @@ body {
   text-align: center;
   padding-bottom: 25px;
 }
+
 .LogoMant {
   width: 220px;
   height: 160px;
@@ -691,6 +753,7 @@ body {
   color: #162938;
   text-align: center;
 }
+
 .input-box {
   /*formulario*/
   position: relative;
@@ -713,8 +776,8 @@ body {
   transition: 0.5s;
 }
 
-.input-box input:focus ~ label,
-.input-box input:valid ~ label {
+.input-box input:focus~label,
+.input-box input:valid~label {
   /*formulario*/
   top: -5px;
 }
@@ -808,6 +871,31 @@ body {
   cursor: cell;
 }
 
+.search-bar {
+  /*indexUnits*/
+  display: flex;
+  align-items: center;
+  padding: 50px;
+}
+
+.inputY {
+  /*indexUnits*/
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 8px;
+}
+
+.buttonB {
+  /*indexUnits*/
+  padding: 8px 16px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
 /*Mantenimiento julio */
 /* search*/
 
@@ -849,6 +937,7 @@ body {
 }
 
 @media (max-width: 768px) {
+
   /*indexMante*/
   .search-container {
     margin-top: 10vw;
@@ -896,19 +985,23 @@ body {
 }
 
 /*@media (max-width: 768px) {
-  /*indexMante*//*
+  /*indexMante*/
+/*
   .SecTable {
     width: 100%;
     margin: 5vw auto 0;
     font-size: 14px;
   }
 }*/
-@media (max-width: 768px) { /*indexMante*/
+@media (max-width: 768px) {
+
+  /*indexMante*/
   .SecTable {
     font-size: 10px;
     width: 95%;
     margin-left: 2.5%;
   }
+
   .SecTable th,
   .SecTable td {
     padding: 5px;
@@ -931,10 +1024,11 @@ body {
 }
 
 @media (max-width: 768px) {
+
   /*indexMante*/
   .table1 {
     font-size: 3vw;
-    
+
   }
 }
 
@@ -974,6 +1068,7 @@ td {
 }
 
 @media (max-width: 768px) {
+
   /*indexMante*/
   th,
   td,
@@ -983,11 +1078,13 @@ td {
     height: auto;
   }
 }
+
 .optionValue:hover {
   /*indexMante*/
   background-color: #284b63;
   color: #fff;
 }
+
 .LogoMante {
   /*indexMante*/
   width: 30vw;
@@ -1000,6 +1097,7 @@ td {
 }
 
 @media (max-width: 768px) {
+
   /*indexMante*/
   .LogoMante {
     width: 8vw;
@@ -1014,10 +1112,12 @@ td {
 .mt-5 {
   margin-top: 3rem !important;
 }
+
 .container.mt-5 {
   margin-top: 3rem !important;
   margin-left: 1%;
 }
+
 .text-center {
   text-align: center !important;
   font-family: "Josefin_Sans";
@@ -1025,6 +1125,7 @@ td {
   font-weight: bolder;
   margin-top: -2%;
 }
+
 @media (max-width: 768px) {
   .container.mt-5 {
     margin-left: 10px;
@@ -1035,6 +1136,7 @@ td {
     margin-top: -4%;
   }
 }
+
 .flit {
   font-weight: bolder;
   font-size: 20px;
@@ -1043,6 +1145,7 @@ td {
 
   margin-left: 65%;
 }
+
 .btn.btn-primary.me-md-2 {
   color: #fff;
   background-color: #212529;
@@ -1094,6 +1197,7 @@ td {
   margin-top: 2%;
   margin-left: 8%;
 }
+
 .bus {
   font-size: 20px;
   font-family: "Josefin_Sans";
@@ -1101,6 +1205,7 @@ td {
   margin-bottom: -10% !important;
   margin-left: 5%;
 }
+
 .form-control {
   display: block;
   width: 15%;
@@ -1137,6 +1242,7 @@ td {
   background-color: #284b63;
   border: 2px solid #3c6e71;
 }
+
 .table-cites th,
 .table-cites td {
 
@@ -1156,12 +1262,14 @@ td {
 
   background-color: #353535;
 }
+
 @media (max-width: 768px) {
   .table-cites {
     font-size: 10px;
     width: 95%;
     margin-left: 2.5%;
   }
+
   .table-cites th,
   .table-cites td {
     padding: 5px;
@@ -1171,15 +1279,16 @@ td {
     font-size: 10px;
   }
 }
+
 @media (max-width: 576px) {
   /*indexInve*/
- 
+
   .table-cites {
     font-size: 10px;
     width: 95%;
     margin-left: 2.5%;
-    }
   }
+}
 
 .row {
   display: flex;
@@ -1224,6 +1333,7 @@ td {
   flex: 0 0 100%;
   max-width: 100%;
 }
+
 .form-select {
   background-color: #212529;
   display: block;
@@ -1239,9 +1349,11 @@ td {
   border-radius: 0.25rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
+
 .contenert {
   color: #212529;
 }
+
 .form-select:focus {
   color: #212529;
   background-color: #fff;
@@ -1255,11 +1367,13 @@ td {
   color: #d9d9d9;
   padding: 35px;
 }
+
 .contenert {
   background-color: #212529;
   padding: 2px;
   margin-top: 1%;
 }
+
 .image-container {
   width: 800px;
   height: 250px;
@@ -1274,6 +1388,7 @@ td {
 
   object-fit: cover;
 }
+
 .PageFoter {
   text-align: center !important;
   font-family: "Josefin_Sans";
@@ -1283,14 +1398,15 @@ td {
 
 .btn.btn-primary.me-md-2.img {
   display: inline-block;
-  width: 20px; 
-  height: 20px; 
+  width: 20px;
+  height: 20px;
   background-image: url("/lupa.png");
-  background-size: cover; 
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  margin-right: 5px; 
+  margin-right: 5px;
 }
+
 .btn.btn-primary.me-md-2:hover {
   color: #fff;
   background-color: #212529;
@@ -1315,6 +1431,7 @@ td {
 .btn.btn-primary.me-md-2:not(:disabled):not(.disabled):active:focus {
   box-shadow: 0 0 0 0.25rem rgba(117, 117, 117, 0.5);
 }
+
 /******************************************/
 .calendar {
   width: 300px;
