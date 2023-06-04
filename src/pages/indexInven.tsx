@@ -9,11 +9,6 @@ export default function indexInven() {
       <div>
         <Page_Head></Page_Head>
       </div>
-      <div>
-        <h2 className="title2">Repuestos De Inventario
-          <img className="busLogo" src="/img/busNav.png" alt="Not Found" />
-        </h2>
-      </div>
       <article className="columnTable">
         <div>
           <input className="search" type="text" id="Buscar" name="Buscar" placeholder="Buscar" />
@@ -70,7 +65,7 @@ export default function indexInven() {
         </table>
       </article>
       <div>
-        <button className="buttonSearch" type="submit">Generar Proforma</button>
+        <button className="buttonSearch" type="submit">Agregar</button>
       </div>
       <footer>
         <Page_Footer></Page_Footer>

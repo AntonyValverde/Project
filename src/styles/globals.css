@@ -1234,10 +1234,10 @@ td {
   text-align: center;
   color: #fff;
   font-family: "Josefin_Sans";
-  font-size: 20px;
+  font-size: 14px;
   border-collapse: collapse;
-  width: 80%;
-  margin-left: 10.5%;
+  width: 5%;
+  margin-left: 25%;
   margin-bottom: 10px;
   background-color: #284b63;
   border: 2px solid #3c6e71;
@@ -1280,13 +1280,14 @@ td {
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 414px) {
   /*indexInve*/
 
   .table-cites {
-    font-size: 10px;
-    width: 95%;
-    margin-left: 2.5%;
+    font-size: 8px;
+    width: 0%;
+    margin-left: -2%;
+    
   }
 }
 
