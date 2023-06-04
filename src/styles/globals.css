@@ -381,7 +381,6 @@ body {
   display: flex;
   width: 600px;
   height: 430px;
-  
 }
 
 .image img {
@@ -403,8 +402,6 @@ body {
   opacity: 1;
   filter: contrast(120%);
 }
-
-
 
 .image.flipped {
   transform: rotateY(180deg);
@@ -576,7 +573,7 @@ body {
 
 /*indexInve*/
 
-.search {
+.search1 {
   /*indexInve*/
   font-family: "Josefin_Sans";
   font-size: 20px;
@@ -587,7 +584,7 @@ body {
   color: #ffff;
 }
 
-.tabla {
+.table {
   /*indexInve*/
   margin-top: 1%;
   font-family: "Josefin_Sans";
@@ -600,21 +597,21 @@ body {
   border: 2px solid #3c6e71;
 }
 
-.tabla th,
-.tabla td {
+.table th,
+.table td {
   /*indexInve*/
   border: 1px solid #ddd;
   padding: 8px;
   text-align: left;
 }
 
-.tabla th {
+.table th {
   /*indexInve*/
   background-color: #353535;
   color: white;
 }
 
-.tabla tr:nth-child(even) {
+.table tr:nth-child(even) {
   /*indexInve*/
   background-color: #ffff;
 }
@@ -636,11 +633,68 @@ body {
   /*indexInve*/
   background: #3c6e71;
 }
+.modalForm {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-contentForm {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.closeForm {
+  border: none;
+  background: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+.closeForm:hover {
+  background-color: #d9d9d9;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.labelform {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.inputForm {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.buttonAdd {
+  padding: 8px 16px;
+  background-color: green;
+  color: #fff;
+  border-radius: 4px;
+  margin-top: 1%;
+}
+
+.buttonAdd:hover {
+  background-color: #454545;
+}
 
 /* Responsive Styles indexInve*/
 
 @media (max-width: 768px) {
-
   /*indexInve*/
   .search {
     font-size: 16px;
@@ -648,7 +702,7 @@ body {
     margin-top: 4%;
   }
 
-  .tabla {
+  .table {
     font-size: 16px;
     width: 90%;
     margin-left: 5%;
@@ -662,7 +716,6 @@ body {
 }
 
 @media (max-width: 576px) {
-
   /*indexInve*/
   .search {
     font-size: 14px;
@@ -670,7 +723,7 @@ body {
     margin-top: 4%;
   }
 
-  .tabla {
+  .table {
     font-size: 14px;
     width: 95%;
     margin-left: 2.5%;
@@ -776,8 +829,8 @@ body {
   transition: 0.5s;
 }
 
-.input-box input:focus~label,
-.input-box input:valid~label {
+.input-box input:focus ~ label,
+.input-box input:valid ~ label {
   /*formulario*/
   top: -5px;
 }
@@ -937,7 +990,6 @@ body {
 }
 
 @media (max-width: 768px) {
-
   /*indexMante*/
   .search-container {
     margin-top: 10vw;
@@ -994,7 +1046,6 @@ body {
   }
 }*/
 @media (max-width: 768px) {
-
   /*indexMante*/
   .SecTable {
     font-size: 10px;
@@ -1012,7 +1063,6 @@ body {
   }
 }
 
-
 .table1 {
   /*indexMante*/
   color: #fff;
@@ -1024,11 +1074,9 @@ body {
 }
 
 @media (max-width: 768px) {
-
   /*indexMante*/
   .table1 {
     font-size: 3vw;
-
   }
 }
 
@@ -1068,7 +1116,6 @@ td {
 }
 
 @media (max-width: 768px) {
-
   /*indexMante*/
   th,
   td,
@@ -1097,7 +1144,6 @@ td {
 }
 
 @media (max-width: 768px) {
-
   /*indexMante*/
   .LogoMante {
     width: 8vw;
@@ -1245,7 +1291,6 @@ td {
 
 .table-cites th,
 .table-cites td {
-
   border: 1px solid #ddd;
   padding: 8px;
 
@@ -1253,13 +1298,11 @@ td {
 }
 
 .table-cites th {
-
   background-color: #353535;
   color: white;
 }
 
 .table-cites tr:nth-child(even) {
-
   background-color: #353535;
 }
 
@@ -1287,7 +1330,6 @@ td {
     font-size: 8px;
     width: 0%;
     margin-left: -2%;
-    
   }
 }
 
