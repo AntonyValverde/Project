@@ -4,7 +4,10 @@ const Units_head = ({ }) => {
             <header>
                 
                 <h1 className="etiqueta">Unidades Disponibles
-
+                    <div className="search-bar">
+                        <input type="text" placeholder="Buscar" className="inputY"/>
+                        <button className="buttonB">Buscar</button>
+                    </div>
                     <img className="mante" src="/img/disponible.png" alt="imagen" />
                 </h1>
                 
