@@ -46,7 +46,7 @@ const TableForm = () => {
             <span className="closeForm" onClick={handleCloseModal}>
               &times;
             </span>
-
+            Agregar Repuesto
             <form onSubmit={handleSubmit}>
               <label htmlFor="id">ID:</label>
               <input
