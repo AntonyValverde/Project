@@ -197,7 +197,6 @@ body {
   margin-top: -30px;
 }
 
-
 .parr {
   /*footer*/
   font-family: "Josefin_Sans";
@@ -310,7 +309,6 @@ body {
   width: valor;
   height: 50px;
 }
- 
 
 .text {
   /*indexUnits*/
@@ -366,7 +364,7 @@ body {
 
 .Units {
   /*indexUnits*/
-  
+
   background: rgb(238, 230, 230);
   color: #333;
   border: 1px solid #333;
@@ -429,7 +427,6 @@ body {
   display: flex;
   opacity: 1;
 }
-
 
 /* Responsive Styles indexUnits*/
 @media (max-width: 768px) {
@@ -824,7 +821,8 @@ body {
   position: relative;
 }
 
-.front, .back {
+.front,
+.back {
   width: 200px;
   height: 200px;
   position: absolute;
@@ -914,7 +912,6 @@ body {
 }
 
 .inputY {
-  
   flex: 1;
   padding: 8px;
   font-size: 16px;

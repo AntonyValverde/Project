@@ -113,7 +113,7 @@ const TableForm = () => {
           </div>
         </div>
       )}
-      <article className="columnTable">
+      <article>
         <div>
           <input
             className="Textsearch"
