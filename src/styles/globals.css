@@ -303,18 +303,23 @@ body {
 }
 
 .cuadro {
+  /*indexUnits*/
+  position: relative;
   background-color: #3c6e71;
   width: valor;
   height: 50px;
 }
+ 
 
 .text {
+  /*indexUnits*/
   color: #333;
   font-size: 30px;
   font-family: "Josefin_Sans";
 }
 
 .busEtiqueta {
+  /*indexUnits*/
   width: 600px;
   height: 200px;
   margin-inline: 30%;
@@ -360,6 +365,7 @@ body {
 
 .Units {
   /*indexUnits*/
+  
   background: rgb(238, 230, 230);
   color: #333;
   border: 1px solid #333;
@@ -372,6 +378,57 @@ body {
   width: 1000px;
   height: 450px;
 }
+.image {
+  display: flex;
+  width: 600px;
+  height: 430px;
+}
+
+.image img {
+  /*indexUnits*/
+  width: 0px;
+  flex-grow: 1;
+  object-fit: cover;
+  opacity: 0.8;
+  transition: 0.5s ease;
+
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.image img:hover {
+  /*indexUnits*/
+  cursor: pointer;
+  width: 300px;
+  opacity: 1;
+  filter: contrast(120%);
+}
+
+.image.flipped {
+  transform: rotateY(180deg);
+}
+
+.container-content {
+  width: 0px;
+  flex-grow: 1;
+  object-fit: cover;
+  opacity: 0.8;
+  transition: 0.5s ease;
+  position: absolute;
+  background-color: #f1f1f1;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.container-content.visible {
+  position: absolute;
+  display: flex;
+  opacity: 1;
+}
+
 
 /* Responsive Styles indexUnits*/
 @media (max-width: 768px) {
@@ -809,6 +866,38 @@ body {
   color: #162938;
   font-weight: 600;
   padding: 0 35px 0 5px;
+}
+
+.search-bar {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  width: 300px;
+  margin: 0 auto;
+}
+
+.inputY {
+  
+  flex: 1;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.buttonB {
+  padding: 8px 16px;
+  font-size: 16px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 8px;
+}
+
+.buttonB:hover {
+  background-color: #45a049;
 }
 
 .input-box .icon {
