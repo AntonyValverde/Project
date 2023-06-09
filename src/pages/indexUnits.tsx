@@ -2,7 +2,8 @@ import Page_Footer from "@/components/PageFooter";
 import Units_head from "@/components/Units/HeadUnits";
 import FormButton from "@/components/Units/formulario";
 import html2canvas from 'html2canvas';
-import ModalUnits from "@/components/Units/ModalUnits";
+ import ModalUnits from "@/components/Units/ModalUnits";
+import image from "@/components/Units/Images";
 import React, { useState } from "react";
 
 export default function indexUnits() {
@@ -24,6 +25,7 @@ export default function indexUnits() {
 
             </div>
             <div>
+            
                 <section >
                     <article>
                         <div className="search-bar">
@@ -31,7 +33,7 @@ export default function indexUnits() {
                             <button className="buttonB">Buscar</button>
                         </div>
                     </article>
-
+                    
                     <article className="Units photos">
                         {/*<img className="photos img" src="/1.png"></img>
                         <img className="photos img" src="/2.png"></img>
@@ -55,10 +57,12 @@ export default function indexUnits() {
                         <img className="photos img" src="https://image.lexica.art/full_jpg/90193690-7742-4280-912b-44579af929c5" alt="44" onClick={() => cambiarEstadoModal1(!estadoModal1)} />
                         <img className="photos img" src="https://image.lexica.art/full_jpg/de1f37dc-2496-4f9a-a4a9-b3dcb62ebbd7" alt="54" onClick={() => cambiarEstadoModal1(!estadoModal1)} />
                         <img className="photos img" src="https://image.lexica.art/full_jpg/a59d5df2-b146-48a7-925b-ab3c79186f48" alt="14" onClick={() => cambiarEstadoModal1(!estadoModal1)} />
+                        
                     </article>
 
                 </section>
             </div>
+
             <div>
                 <FormButton></FormButton>
             </div>
