@@ -116,7 +116,7 @@ const TableForm = () => {
       <article className="columnTable">
         <div>
           <input
-            className="search1"
+            className="Textsearch"
             type="text"
             id="Buscar"
             name="Buscar"
@@ -124,14 +124,14 @@ const TableForm = () => {
           />
         </div>
 
-        <table className="table">
+        <table className="tableInven">
           <thead>
             <tr>
               <th>ID</th>
               <th>Repuesto</th>
               <th>Especificación</th>
               <th>Cantidad</th>
-              <th>Precio</th>
+              <th>Precio $</th>
             </tr>
           </thead>
 

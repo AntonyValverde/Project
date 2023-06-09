@@ -538,7 +538,7 @@ body {
 
 /*indexInve*/
 
-.search {
+.Textsearch {
   /*indexInve*/
   font-family: "Josefin_Sans";
   font-size: 20px;
@@ -549,7 +549,7 @@ body {
   color: #ffff;
 }
 
-.tabla {
+.tableInven {
   /*indexInve*/
   margin-top: 1%;
   font-family: "Josefin_Sans";
@@ -562,21 +562,21 @@ body {
   border: 2px solid #3c6e71;
 }
 
-.tabla th,
-.tabla td {
+.tableInven th,
+.tableInven td {
   /*indexInve*/
   border: 1px solid #ddd;
   padding: 8px;
   text-align: left;
 }
 
-.tabla th {
+.tableInven th {
   /*indexInve*/
   background-color: #353535;
   color: white;
 }
 
-.tabla tr:nth-child(even) {
+.tableInven tr:nth-child(even) {
   /*indexInve*/
   background-color: #ffff;
 }
@@ -602,7 +602,6 @@ body {
 /* Responsive Styles indexInve*/
 
 @media (max-width: 768px) {
-
   /*indexInve*/
   .search {
     font-size: 16px;
@@ -610,7 +609,7 @@ body {
     margin-top: 4%;
   }
 
-  .tabla {
+  .tableInven {
     font-size: 16px;
     width: 90%;
     margin-left: 5%;
@@ -624,7 +623,6 @@ body {
 }
 
 @media (max-width: 576px) {
-
   /*indexInve*/
   .search {
     font-size: 14px;
@@ -632,7 +630,7 @@ body {
     margin-top: 4%;
   }
 
-  .tabla {
+  .tableInven {
     font-size: 14px;
     width: 95%;
     margin-left: 2.5%;
@@ -643,6 +641,64 @@ body {
     padding: 2px 4px;
     margin-left: 77vw;
   }
+}
+.modalForm {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-contentForm {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.closeForm {
+  border: none;
+  background: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+.closeForm:hover {
+  background-color: #d9d9d9;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.labelform {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.inputForm {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.buttonAdd {
+  padding: 8px 16px;
+  background-color: green;
+  color: #fff;
+  border-radius: 4px;
+  margin-top: 1%;
+}
+
+.buttonAdd:hover {
+  background-color: #454545;
 }
 
 .titleMant {
@@ -738,8 +794,8 @@ body {
   transition: 0.5s;
 }
 
-.input-box input:focus~label,
-.input-box input:valid~label {
+.input-box input:focus ~ label,
+.input-box input:valid ~ label {
   /*formulario*/
   top: -5px;
 }
@@ -833,7 +889,6 @@ body {
   cursor: cell;
 }
 
-
 /*Mantenimiento julio */
 /* search*/
 
@@ -846,7 +901,7 @@ body {
   /*margin-right: 1%;*/
   color: #fff;
 }
-.titul2{
+.titul2 {
   float: right;
   margin-right: 18%;
   font-size: 27px;
@@ -866,7 +921,6 @@ body {
 }
 
 @media (max-width: 768px) {
-
   /*indexMante*/
   .search-container {
     margin-top: 10vw;
@@ -896,8 +950,6 @@ body {
   margin-left: 10%;
   background-color: #284b63;
   /* background-color: violet;*/
-
-
 }
 
 .table1 {
@@ -911,7 +963,6 @@ body {
   margin-bottom: 10px;
   background-color: #284b63;
   border: 2px solid #3c6e71;
-
 }
 
 .tabla1 th,
@@ -935,7 +986,6 @@ body {
 }
 
 @media (max-width: 768px) {
-
   /*indexMante*/
   .TabMante {
     width: 90%;
@@ -950,7 +1000,6 @@ body {
 }
 
 @media (max-width: 576px) {
-
   /*indexMante*/
 
   .TabMante {
@@ -989,11 +1038,10 @@ tbody {
 .buntoTabale:hover {
   background-color: #3a9950;
   overflow: hidden;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 @media (max-width: 768px) {
-
   /*indexMante*/
   th,
   td,
@@ -1022,7 +1070,6 @@ tbody {
 }
 
 @media (max-width: 768px) {
-
   /*indexMante*/
   .LogoMante {
     width: 8vw;
@@ -1033,40 +1080,40 @@ tbody {
 }
 
 /*ModalMante*/
-.contenidoModal{
+.contenidoModal {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.texh1Mo{
+.texh1Mo {
   font-size: 42px;
   font-weight: 700;
   margin-bottom: 10px;
 }
-.notaModal{
+.notaModal {
   font-size: 18px;
   margin-bottom: 20px;
 }
 /*aqui*/
-.buttonModal{
+.buttonModal {
   margin-bottom: 20px;
-  background: #1766DC;
+  background: #1766dc;
   text-decoration: dashed;
   width: 20%;
   border-radius: 20px;
   cursor: pointer;
 }
-.buttonModal:hover{
-  background-color: #2196f3
+.buttonModal:hover {
+  background-color: #2196f3;
 }
-.DaModalExit{
+.DaModalExit {
   text-align: center;
-   font-size: 18px;
+  font-size: 18px;
   margin-bottom: 20px;
 }
-.DaModalExi{
+.DaModalExi {
   text-align: center;
-   font-size: 15px;
+  font-size: 15px;
   margin-bottom: 20px;
 }
 
@@ -1081,7 +1128,6 @@ tbody {
   display: flex;
   align-items: center;
   justify-content: center;
-
 }
 
 .ContenerModal {
@@ -1099,13 +1145,13 @@ tbody {
   justify-content: space-between;
   margin-bottom: 20px;
   padding-bottom: 20px;
-  border-bottom: 1px solid #E8E8E8;
+  border-bottom: 1px solid #e8e8e8;
 }
 
-.textiModel{
+.textiModel {
   font-weight: 500;
   font-size: 20px;
-  color: #1766DC;
+  color: #1766dc;
   margin-top: 10px;
 }
 
@@ -1118,9 +1164,9 @@ tbody {
   border: none;
   background: none;
   cursor: pointer;
-  transition: .3s ease all;
+  transition: 0.3s ease all;
   border-radius: 5px;
-  color: #1766DC;
+  color: #1766dc;
 }
 
 .butCeModal:hover {
@@ -1134,7 +1180,6 @@ tbody {
   height: 70%;
 }
 /*Fin_Modal_Mante*/
-
 
 /*Paula*/
 .mt-5 {
@@ -1273,7 +1318,6 @@ tbody {
 
 .table-cites th,
 .table-cites td {
-
   border: 1px solid #ddd;
   padding: 8px;
 
@@ -1281,13 +1325,11 @@ tbody {
 }
 
 .table-cites th {
-
   background-color: #353535;
   color: white;
 }
 
 .table-cites tr:nth-child(even) {
-
   background-color: #353535;
 }
 
