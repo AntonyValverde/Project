@@ -18,7 +18,7 @@ const TableButton: React.FC<TableButtonProps> = ({ data }) => {
 
   return (
     <div>
-      <button onClick={handleButtonClick} className="button">
+      <button onClick={handleButtonClick} className="buttonPau">
         {showTable  ? "Ver -" : "Ver +"}
       </button>
       {showTable && (
