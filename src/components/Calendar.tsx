@@ -3,6 +3,7 @@ import React from "react";
 import { useState } from "react";
 import Page_Head from "./PageHead";
 import Page_Footer from "./PageFooter";
+import TableButton from "../components/TableButton";
 
 interface TableData {
   Id_unidad: number;
@@ -16,9 +17,9 @@ interface TableData {
 }
 
 interface TableProps {
-  data: TableData[];
+  datap: TableData[];
 }
-const Calendar: React.FC<TableProps> = ({ data }) => {
+const Calendar: React.FC<TableProps> = ({ datap }) => {
   const today = new Date();
 
   const meses: { [key: string]: string } = {
@@ -35,6 +36,15 @@ const Calendar: React.FC<TableProps> = ({ data }) => {
     "11": "noviembre",
     "12": "diciembre",
   };
+  const data = [
+    { Id_unidad: 1,  Estado: 'excelente', Capacidad: "fuerte", Color: 'Rojo' },
+    { Id_unidad: 2,  Estado: 'excelente', Capacidad: "fuerte", Color: 'Rojo' },
+    { Id_unidad: 3,  Estado: 'excelente', Capacidad: "fuerte", Color: 'Rojo' },
+    { Id_unidad: 4,  Estado: 'excelente', Capacidad: "fuerte", Color: 'Rojo' },
+    { Id_unidad: 5,  Estado: 'excelente', Capacidad: "fuerte", Color: 'Rojo' },
+
+    // Agrega más datos según tus necesidades
+  ];
   const convertirFecha = (fechaISO: string): string => {
     let fechaSinHora = fechaISO.split("T")[0];
     let fechaSeparada = fechaSinHora.split("-") as string[];
@@ -66,13 +76,23 @@ const Calendar: React.FC<TableProps> = ({ data }) => {
 
   const [fechaNacimiento, setFechaNacimiento] = useState("");
 
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  const openModal = () => {
+    setModalIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalIsOpen(false);
+  };
+
   return (
     <>
       <header>
         <Page_Head></Page_Head>
       </header>
 
-      <div className="container mt-5">
+      <div className="TabCita">
         <h3 className="text-center">
           Calendario de Mantenimientos Preventivos
         </h3>
@@ -112,37 +132,44 @@ const Calendar: React.FC<TableProps> = ({ data }) => {
           </div>
         </div>
         <hr />
-
-        <table className="table-cites">
+      
+        
+        <div className="tablaaa">
+        <table className="tabla2">
+       
           <thead>
+             
             <tr>
+          
               <th>Id_unidad</th>
               <th>Modelo</th>
               <th>Marca</th>
               <th>Año</th>
               <th>Placa</th>
-              <th>Estado</th>
-              <th>Capacidad</th>
-              <th>Color</th>
             </tr>
+            
           </thead>
+          
+      
+
           <tbody>
-            {data.map((item) => (
+            {datap.map((item) => (
               <tr key={item.Id_unidad}>
                 <td>{item.Id_unidad}</td>
                 <td>{item.Modelo}</td>
                 <td>{item.Marca}</td>
                 <td>{item.Año}</td>
                 <td>{item.Placa}</td>
-                <td>{item.Estado}</td>
-                <td>{item.Capacidad}</td>
-                <td>{item.Color}</td>
               </tr>
             ))}
           </tbody>
         </table>
+        </div>
+         <div>
+      <TableButton data={data} Id_unidad={0} Estado={''} Capacidad={''} Color={''} />
+    </div>
       </div>
-
+ 
       <footer>
         <Page_Footer></Page_Footer>
       </footer>
@@ -150,3 +177,4 @@ const Calendar: React.FC<TableProps> = ({ data }) => {
   );
 };
 export default Calendar;
+

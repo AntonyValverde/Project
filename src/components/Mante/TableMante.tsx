@@ -2,8 +2,9 @@ import PropTypes from 'prop-types'
 import React, { Component, useState } from 'react'
 import ModalMante from '@/components/Mante/ModalMante';
 export default function TableMante() {
-    const[ estadoModal1, cambiarEstadoModal1]= useState(false);      
-    const[ estadoModal2, cambiarEstadoModal2]= useState(false);    
+    
+    const[ estadoModal1, cambiarEstadoModal1] = useState(false);      
+
     return (
          <>
             
@@ -36,11 +37,11 @@ export default function TableMante() {
                             <td>
                             <button onClick={()=> cambiarEstadoModal1(!estadoModal1)} className='buntoTabale' about='button' > Mas Información
                                     <ModalMante
-                                        estado = {estadoModal1}
-                                        cambiarEstado= {cambiarEstadoModal1}
-                                        tituloModal=  "INFORMACIÓN"
-                                    >
-                                        <section className='contenidoModal'>
+                                        estado={estadoModal1}
+                                        cambiarEstado={cambiarEstadoModal1}
+                               
+                                    >   
+                                    <section className='contenidoModal'>
                                             <h1 className='texh1Mo'> Nota</h1>
                                             <p className='notaModal'> Se le cambio una solo llanta el resto todo bien</p>
                                             <h1 className='DaModalExit'> Fecha de salida: <h2 className='DaModalExi'>06/06/21 </h2> </h1>
@@ -61,11 +62,11 @@ export default function TableMante() {
                             <td>Cambio de LLanta</td>
                             <td>$100</td>
                             <td>
-                                <button onClick={()=> cambiarEstadoModal1(!estadoModal1)} className='buntoTabale' about='button' > Mas Información
+                                <button onClick={()=>cambiarEstadoModal1(!estadoModal1)} className='buntoTabale' about='button' > Mas Información
                                     <ModalMante
                                         estado = {estadoModal1}
                                         cambiarEstado= {cambiarEstadoModal1}
-                                        tituloModal=  "INFORMACIÓN"
+                                       
                                     >
                                         <section className='contenidoModal'>
                                             <h1 className='texh1Mo'> Nota</h1>
@@ -89,11 +90,11 @@ export default function TableMante() {
                             <td>Cambio de LLanta</td>
                             <td>$100</td>
                             <td>
-                            <button onClick={()=> cambiarEstadoModal1(!estadoModal1)} className='buntoTabale' about='button' > Mas Información
+                            <button onClick={()=>cambiarEstadoModal1(!estadoModal1)} className='buntoTabale' about='button' > Mas Información
                                     <ModalMante
                                         estado = {estadoModal1}
                                         cambiarEstado= {cambiarEstadoModal1}
-                                        tituloModal=  "INFORMACIÓN"
+                                       
                                     >
                                         <section className='contenidoModal'>
                                             <h1 className='texh1Mo'> Nota</h1>
@@ -116,11 +117,11 @@ export default function TableMante() {
                             <td>Cambio de LLanta</td>
                             <td>$100</td>
                             <td> 
-                                <button onClick={()=> cambiarEstadoModal1(!estadoModal1)} className='buntoTabale' about='button' > Mas Información
+                                <button onClick={()=>cambiarEstadoModal1(!estadoModal1)} className='buntoTabale' about='button' > Mas Información
                                     <ModalMante
-                                        estado = {estadoModal1}
-                                        cambiarEstado= {cambiarEstadoModal1}
-                                        tituloModal=  "INFORMACIÓN"
+                                        estado={estadoModal1}
+                                        cambiarEstado={cambiarEstadoModal1}
+                                        
                                     >
                                         <section className='contenidoModal'>
                                             <h1 className='texh1Mo'> Nota</h1>
@@ -148,7 +149,7 @@ export default function TableMante() {
                                     <ModalMante
                                         estado = {estadoModal1}
                                         cambiarEstado= {cambiarEstadoModal1}
-                                        tituloModal=  "INFORMACIÓN"
+                                        /*tituloModal=  "INFORMACIÓN"*/
                                     >
                                         <section className='contenidoModal'>
                                             <h1 className='texh1Mo'> Nota</h1>
