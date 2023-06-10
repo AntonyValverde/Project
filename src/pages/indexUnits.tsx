@@ -1,9 +1,6 @@
-import Page_Footer from "@/components/PageFooter";
-import Units_head from "@/components/Units/HeadUnits";
 import FormButton from "@/components/Units/formulario";
 import html2canvas from 'html2canvas';
- import ModalUnits from "@/components/Units/ModalUnits";
-import image from "@/components/Units/Images";
+import ModalUnits from "@/components/Units/ModalUnits";
 import React, { useState } from "react";
 
 export default function indexUnits() {
