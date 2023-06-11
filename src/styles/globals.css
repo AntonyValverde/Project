@@ -634,6 +634,14 @@ body {
   background-color: #ffff;
 }
 
+.containerTable {
+  max-height: 300px;
+  overflow-y: auto;
+  margin-top: 10px; /* Espacio superior */
+  margin-bottom: 10px; /* Espacio inferior */
+  padding-right: 10px;
+}
+
 .buttonSearch {
   /*indexInve*/
   padding: 4px 8px;

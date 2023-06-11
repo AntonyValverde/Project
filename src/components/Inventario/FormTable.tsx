@@ -1,4 +1,11 @@
-import React, { FormEvent, useState } from "react";
+import React, { FormEvent, useEffect, useState } from "react";
+import "firebase/firestore";
+import "firebase/compat/firestore";
+import { getFirestore, collection, getDocs } from "firebase/firestore";
+import db from "@/firebase/config";
+import firebaseConfig from "@/firebase/config";
+import { config } from "process";
+import { initializeApp } from "firebase/app";
 
 const TableForm = () => {
   const [showModal, setShowModal] = useState(false);
@@ -9,7 +16,30 @@ const TableForm = () => {
   const [precio, setPrecio] = useState("");
   const [tableData, setTableData] = useState<any[]>([]);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const app = initializeApp(firebaseConfig);
+
+  const db = getFirestore(app);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const db = getFirestore();
+      try {
+        const querySnapshot = await getDocs(collection(db, "Inventario"));
+        const data = querySnapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+        console.log("Data:", data); // Verificar los datos obtenidos
+        setTableData(data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const newData = {
@@ -123,66 +153,32 @@ const TableForm = () => {
             placeholder="Buscar"
           />
         </div>
-
-        <table className="tableInven">
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Repuesto</th>
-              <th>Especificación</th>
-              <th>Cantidad</th>
-              <th>Precio $</th>
-            </tr>
-          </thead>
-
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Rotula</td>
-              <td>Delantera</td>
-              <td>3</td>
-              <td>$60</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Hules</td>
-              <td>Traseros</td>
-              <td>3</td>
-              <td>$70</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Anillos</td>
-              <td>Embrague</td>
-              <td>2</td>
-              <td>$85</td>
-            </tr>
-            <tr>
-              <td>4</td>
-              <td>Neumáticos</td>
-              <td>R-21</td>
-              <td>4</td>
-              <td>$120</td>
-            </tr>
-            <tr>
-              <td>5</td>
-              <td>Luces</td>
-              <td>Largas</td>
-              <td>2</td>
-              <td>$150</td>
-            </tr>
-            {tableData.map((data, index) => (
-              <tr key={index}>
-                <td>{data.id}</td>
-                <td>{data.repuesto}</td>
-                <td>{data.especificacion}</td>
-                <td>{data.cantidad}</td>
-                <td>{data.precio}</td>
+        <div className="containerTable">
+          <table className="tableInven">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Repuesto</th>
+                <th>Especificación</th>
+                <th>Cantidad</th>
+                <th>Precio $</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {tableData.map((data, index) => (
+                <tr key={index}>
+                  <td>{data.id}</td>
+                  <td>{data.repuesto}</td>
+                  <td>{data.especificacion}</td>
+                  <td>{data.cantidad}</td>
+                  <td>{data.precio}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </article>
+
       <button className="buttonSearch" onClick={() => setShowModal(true)}>
         Agregar datos
       </button>
