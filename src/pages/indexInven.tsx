@@ -6,7 +6,6 @@ import { FormEvent, useState } from "react";
 export default function indexInven() {
   return (
     <>
-    
       <div>
         <Page_Head></Page_Head>
       </div>
@@ -20,7 +19,6 @@ export default function indexInven() {
       <footer>
         <Page_Footer></Page_Footer>
       </footer>
-
     </>
   );
 }

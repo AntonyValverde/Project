@@ -37,11 +37,11 @@ const Calendar: React.FC<TableProps> = ({ datap }) => {
     "12": "diciembre",
   };
   const data = [
-    { Id_unidad: 1,  Estado: 'excelente', Capacidad: "fuerte", Color: 'Rojo' },
-    { Id_unidad: 2,  Estado: 'excelente', Capacidad: "fuerte", Color: 'Rojo' },
-    { Id_unidad: 3,  Estado: 'excelente', Capacidad: "fuerte", Color: 'Rojo' },
-    { Id_unidad: 4,  Estado: 'excelente', Capacidad: "fuerte", Color: 'Rojo' },
-    { Id_unidad: 5,  Estado: 'excelente', Capacidad: "fuerte", Color: 'Rojo' },
+    { Id_unidad: 1, Estado: "excelente", Capacidad: "fuerte", Color: "Rojo" },
+    { Id_unidad: 2, Estado: "excelente", Capacidad: "fuerte", Color: "Rojo" },
+    { Id_unidad: 3, Estado: "excelente", Capacidad: "fuerte", Color: "Rojo" },
+    { Id_unidad: 4, Estado: "excelente", Capacidad: "fuerte", Color: "Rojo" },
+    { Id_unidad: 5, Estado: "excelente", Capacidad: "fuerte", Color: "Rojo" },
 
     // Agrega más datos según tus necesidades
   ];
@@ -132,44 +132,43 @@ const Calendar: React.FC<TableProps> = ({ datap }) => {
           </div>
         </div>
         <hr />
-      
-        
-        <div className="tablaaa">
-        <table className="tabla2">
-       
-          <thead>
-             
-            <tr>
-          
-              <th>Id_unidad</th>
-              <th>Modelo</th>
-              <th>Marca</th>
-              <th>Año</th>
-              <th>Placa</th>
-            </tr>
-            
-          </thead>
-          
-      
 
-          <tbody>
-            {datap.map((item) => (
-              <tr key={item.Id_unidad}>
-                <td>{item.Id_unidad}</td>
-                <td>{item.Modelo}</td>
-                <td>{item.Marca}</td>
-                <td>{item.Año}</td>
-                <td>{item.Placa}</td>
+        <div className="tablaaa">
+          <table className="tabla2">
+            <thead>
+              <tr>
+                <th>Id_unidad</th>
+                <th>Modelo</th>
+                <th>Marca</th>
+                <th>Año</th>
+                <th>Placa</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+
+            <tbody>
+              {datap.map((item) => (
+                <tr key={item.Id_unidad}>
+                  <td>{item.Id_unidad}</td>
+                  <td>{item.Modelo}</td>
+                  <td>{item.Marca}</td>
+                  <td>{item.Año}</td>
+                  <td>{item.Placa}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
-         <div>
-      <TableButton data={data} Id_unidad={0} Estado={''} Capacidad={''} Color={''} />
-    </div>
+        <div>
+          <TableButton
+            data={data}
+            Id_unidad={0}
+            Estado={""}
+            Capacidad={""}
+            Color={""}
+          />
+        </div>
       </div>
- 
+
       <footer>
         <Page_Footer></Page_Footer>
       </footer>
@@ -177,4 +176,3 @@ const Calendar: React.FC<TableProps> = ({ datap }) => {
   );
 };
 export default Calendar;
-
