@@ -4,6 +4,12 @@ import "firebase/compat/firestore";
 import { getFirestore, collection, getDocs, addDoc } from "firebase/firestore";
 import firebaseConfig from "@/firebase/config";
 import { initializeApp } from "firebase/app";
+import {
+  Alert,
+  AlertTitle,
+  AlertIcon,
+  AlertDescription,
+} from "@chakra-ui/alert";
 
 const TableForm = () => {
   const [showModal, setShowModal] = useState(false);
