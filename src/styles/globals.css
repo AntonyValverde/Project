@@ -1244,106 +1244,194 @@ tbody {
 }
 
 /*ModalMante*/
-.contenidoModal {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.texh1Mo {
-  font-size: 42px;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-.notaModal {
-  font-size: 18px;
-  margin-bottom: 20px;
-}
-/*aqui*/
-.buttonModal {
-  margin-bottom: 20px;
-  background: #1766dc;
-  text-decoration: dashed;
-  width: 20%;
-  border-radius: 20px;
-  cursor: pointer;
-}
-.buttonModal:hover {
-  background-color: #2196f3;
-}
-.DaModalExit {
-  text-align: center;
-  font-size: 18px;
-  margin-bottom: 20px;
-}
-.DaModalExi {
-  text-align: center;
-  font-size: 15px;
-  margin-bottom: 20px;
-}
 
-.FonModen {
-  width: 100vw;
-  height: 100vh;
+/*aqui*/
+/*Fin_Modal_Mante*/
+
+/*Prueba de ventana */
+.masInfobutton{
+  border: 2px solid #65aaad; 
+  padding: 8px 18px; 
+  border-radius: 5px;
+  color: #fff;
+  
+
+}
+.masInfobutton:hover{
+ background: #162938;
+
+}
+.modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 40px;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
-  align-items: center;
   justify-content: center;
-}
-
-.ContenerModal {
-  width: 500px;
-  min-height: 100px;
-  background: #fff;
-  position: relative;
-  border-radius: 5px;
-  box-shadow: rgb(100, 100, 111, 0.2) 0px 7px 29px 0px;
-}
-
-.TituModal {
-  display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin-bottom: 20px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid #e8e8e8;
 }
-
-.textiModel {
-  font-weight: 500;
-  font-size: 20px;
-  color: #1766dc;
+.modal-content1 {
+  background-color: white;
+  width: 35vw;
+  height: 85vh;
+  margin-top: 4vw;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.buttonMas{
+  float: right;
+  margin-bottom: 10px;
+}
+.texh1Mo{
+  text-align: center;
+  font-size: 24px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   margin-top: 10px;
+  margin-bottom: 15px;
 }
+.notaModal1{
+  margin-bottom: 15px;
+  font-size: large;
+  text-align: center;
 
-.butCeModal {
-  position: absolute;
-  top: 10px;
-  right: 20px;
-  width: 30px;
-  height: 30px;
-  border: none;
-  background: none;
-  cursor: pointer;
-  transition: 0.3s ease all;
+}
+.notaModal{
+  margin-bottom: 20px;
+  font-size: medium;
+  text-align: center;
+  background: rgb(238, 230, 230, 0.5);
+  border: 2px solid #65aaad; 
+  padding: 8px 18px; 
   border-radius: 5px;
-  color: #1766dc;
+  width: 25vw;
+  margin-left: 3vw;
+}
+.DaModalExit{
+  margin-top: 15px;
+  margin-bottom: 16px;
+  font-size: medium;
+  text-align: center;
+}
+.optionValueAdd2 {
+  /*indexMante*/
+  color: #353535;
+  background-color: #d9d9d9;
+  text-align: left;
+  font-family: "Josefin_Sans";
+  font-size: medium;
+  margin-bottom: 5px;
+  margin-left: 6vw;
+  border-radius: 5px;
+  width: 20vw; height:5vh;
+}
+.optionValueAdd2:hover {
+  /*indexMante*/
+  background-color: #284b63;
+  color: #fff;
+}
+.buttonAcep{
+  margin-bottom: 10px;
+  font-size: medium;
+  text-align: center;
+  background: rgb(238, 230, 230, 0.5);
+  border: 2px solid #65aaad; 
+  padding: 8px 18px; 
+  border-radius: 5px;
+  width: 15vw;
+  margin-left: 8vw;
+}
+.buttonAcep:hover{
+  background-color: #45a049;
+  color: #f1f1f1;
 }
 
-.butCeModal:hover {
-  background: #f2f2f2;
+/* FIN dePrueba de ventana */
+
+
+/*Inicio 2*/
+
+.modal-overlay2 {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  font-size: 14px;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  /*align-items: center;*/
+  margin-bottom: 45px;
 }
 
-.centerClose {
-  margin-top: 10%;
-  margin-left: 10%;
-  width: 70%;
-  height: 70%;
+.modal-content {
+  background-color: white;
+  width: 35vw;
+  height: 90vh;
+  margin-top: 2vw;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
-/*Fin_Modal_Mante*/
+
+.modal-content h2 {
+  margin-top: 0;
+}
+
+.modal-content p {
+  margin-bottom: 20px;
+}
+
+.modal-content button {
+   padding: 9px 19px;
+   margin-left: 88%;
+   margin-bottom: 3px;
+}
+.impuh1Add{
+  margin-bottom: 8px;
+  font-size: medium;
+  text-align: center;
+  background: rgb(238, 230, 230, 0.5);
+  border: 2px solid #65aaad; 
+  padding: 8px 18px; 
+  border-radius: 5px;
+  width: 25vw;
+  margin-left: 3vw;
+  
+}
+.texh2Add{
+  margin-top: 5px;
+  margin-bottom: 10px;
+  font-size: medium;
+  text-align: center;
+}
+.optionValueAdd {
+  /*indexMante*/
+  color: #353535;
+  background-color: #d9d9d9;
+  text-align: left;
+  font-family: "Josefin_Sans";
+  font-size: medium;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  width: 20vw; height:5vh;
+}
+.optionValueAdd:hover {
+  /*indexMante*/
+  background-color: #284b63;
+  color: #fff;
+}
+
+/*Fin 2*/
+
+
+
+
 
 /*Paula*/
 .mt-5 {
