@@ -1,4 +1,5 @@
 import React, { FormEvent, useEffect, useState } from "react";
+import { RiAddCircleLine, RiCloseLine, RiFileList3Line } from "react-icons/ri";
 import "firebase/firestore";
 import "firebase/compat/firestore";
 import { getFirestore, collection, getDocs, addDoc } from "firebase/firestore";
@@ -109,9 +110,16 @@ const TableForm = () => {
               <span className="closeForm" onClick={handleCloseModal}>
                 &times;
               </span>
-              Agregar Repuesto
+              <label className="labelmodal" htmlFor="repuesto">
+                <span className="iconForm">
+                  <RiFileList3Line />
+                </span>
+                Form Agregar Repuesto
+              </label>
               <form onSubmit={handleSubmit}>
-                <label htmlFor="id">ID:</label>
+                <label className="labelform" htmlFor="repuesto">
+                  ID:
+                </label>
                 <input
                   className="inputForm"
                   type="text"
@@ -170,7 +178,16 @@ const TableForm = () => {
                 />
 
                 <button className="buttonAdd" type="submit">
+                  <span className="buttonIcon">
+                    <RiAddCircleLine />
+                  </span>
                   Agregar
+                </button>
+                <button className="ButtonCancel" onClick={handleCloseModal}>
+                  <span className="IconCancel">
+                    <RiCloseLine />
+                  </span>
+                  Cancelar
                 </button>
               </form>
             </div>

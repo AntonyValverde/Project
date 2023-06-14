@@ -761,8 +761,9 @@ body {
 .closeForm {
   border: none;
   background: none;
-  font-size: 20px;
+  font-size: 25px;
   cursor: pointer;
+  margin-left: 95%;
 }
 .closeForm:hover {
   background-color: #d9d9d9;
@@ -774,8 +775,24 @@ body {
 
 .labelform {
   display: block;
-  margin-bottom: 5px;
   font-weight: bold;
+  font-family: "Josefin_Sans";
+  font-size: 18px;
+  margin-bottom: -0.8%;
+  color: #000;
+}
+.labelmodal {
+  display: block;
+  font-weight: bold;
+  font-family: "Josefin_Sans";
+  font-size: 18px;
+  margin-bottom: 2%;
+  color: #000;
+  display: flex;
+  align-items: center;
+}
+.iconForm {
+  margin-right: 5px;
 }
 
 .inputForm {
@@ -784,17 +801,43 @@ body {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+  background-color: #d9d9d9;
+  font-family: "Josefin_Sans";
+  font-size: 18px;
 }
 
 .buttonAdd {
   padding: 8px 16px;
-  background-color: green;
+  background-color: rgb(21, 114, 21);
   color: #fff;
   border-radius: 4px;
-  margin-top: 1%;
+  margin-top: 5%;
+  display: flex;
+  align-items: center;
+  font-family: "Josefin_Sans";
+}
+.buttonIcon {
+  margin-right: 5px;
 }
 
 .buttonAdd:hover {
+  background-color: #454545;
+}
+.ButtonCancel {
+  padding: 8px 16px;
+  background-color: red;
+  color: #fff;
+  border-radius: 4px;
+  margin-top: -11%;
+  margin-left: 35%;
+  display: flex;
+  align-items: center;
+  font-family: "Josefin_Sans";
+}
+.iconCancel {
+  margin-right: 5px;
+}
+.ButtonCancel:hover {
   background-color: #454545;
 }
 
