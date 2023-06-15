@@ -1,10 +1,33 @@
 import FormButton from "@/components/Units/formulario";
 import ModalUnits from "@/components/Units/ModalUnits";
-import Image from "next/image";
-import React, { useState } from "react";
+import { getFirestore, collection, getDocs } from "@firebase/firestore";
+import React, { useEffect, useState } from "react";
+import { uploadFile } from "@/firebase/configUnits";
+import { useParams } from "react-router-dom";
+
 export default function indexUnits() {
   const [isFlipped, setIsFlipped] = useState(false);
   const [estadoModal1, cambiarEstadoModal1] = useState(false);
+  const [data, setData] = useState([]);
+  const [link, setLink] = useState<string | null>(null)
+  const [loanding, setLoanding] = useState<boolean>(false)
+  
+  const handleFile = async (evt: React.ChangeEvent<HTMLInputElement>)=>{
+    const {files} = evt.target;
+    if(!files || !files.length) return;
+    setLoanding(true)
+    const url = await uploadFile(files[0])
+    setLink(url)
+    setLoanding(false)
+  }
+
+  useEffect (() => {
+    const querydb = getFirestore()
+    const queryCollection = collection(querydb, 'photosUnits')
+     
+  })
+
+
 
   const handleImageClick = () => {
     setIsFlipped(!isFlipped);
@@ -25,134 +48,13 @@ export default function indexUnits() {
           <article>
             <div className="search-bar">
               <input type="text" placeholder="Buscar" className="inputY" />
-              <button className="buttonB">Buscar</button>
+              <input accept="image/*" multiple onChange={handleFile} type="file"/>
             </div>
           </article>
 
           <article className="Units photos">
-            {/*<img className="photos img" src="/1.png"></img>
-                        <img className="photos img" src="/2.png"></img>
-                        <img className="photos img" src="/3.png"></img>
-                        <img className="photos img" src="/4.png"></img>
-                        <img className="photos img" src="/5.png"></img>
 
-                        <img className="photos img" src="/1.png"></img>
-                        <img className="photos img" src="/2.png"></img>
-                        <img className="photos img" src="/3.png"></img>
-                        <img className="photos img" src="/4.png"></img>
-                        <img className="photos img" src="/5.png"></img>*/}
-
-            <img
-              className="photos img"
-              src="https://image.lexica.art/full_jpg/c9a3129e-6d48-47d7-9265-1ebc4a32c735"
-              alt="2"
-              onClick={() => cambiarEstadoModal1(!estadoModal1)}
-            />
-            <img
-              className="photos img"
-              src="https://image.lexica.art/full_jpg/ee6c8a40-68e0-4dc6-99c1-7261926ad1f6"
-              alt="3"
-              onClick={() => cambiarEstadoModal1(!estadoModal1)}
-            />
-            <img
-              className="photos img"
-              src="https://image.lexica.art/full_jpg/56213690-71a7-4976-99cd-fb222b63d285"
-              alt="4"
-              onClick={() => cambiarEstadoModal1(!estadoModal1)}
-            />
-            <img
-              className="photos img"
-              src="https://image.lexica.art/full_jpg/81e31e64-83b0-43ad-85db-b5909792d993"
-              alt="5"
-              onClick={() => cambiarEstadoModal1(!estadoModal1)}
-            />
-            <img
-              className="photos img"
-              src="https://image.lexica.art/full_jpg/dcf0ee45-125e-47c3-a4bd-0aaa4ff688b1"
-              alt="6"
-              onClick={() => cambiarEstadoModal1(!estadoModal1)}
-            />
-            <img
-              className="photos img"
-              src="https://image.lexica.art/full_jpg/c5e6a686-1106-4744-9b62-bc95d9e360d0"
-              alt="7"
-              onClick={() => cambiarEstadoModal1(!estadoModal1)}
-            />
-            <img
-              className="photos img"
-              src="https://image.lexica.art/full_jpg/59b6bddc-2652-46fb-8f5e-04e0ae09f0df"
-              alt="55"
-              onClick={() => cambiarEstadoModal1(!estadoModal1)}
-            />
-            <img
-              className="photos img"
-              src="https://image.lexica.art/full_jpg/90193690-7742-4280-912b-44579af929c5"
-              alt="44"
-              onClick={() => cambiarEstadoModal1(!estadoModal1)}
-            />
-            <img
-              className="photos img"
-              src="https://image.lexica.art/full_jpg/de1f37dc-2496-4f9a-a4a9-b3dcb62ebbd7"
-              alt="54"
-              onClick={() => cambiarEstadoModal1(!estadoModal1)}
-            />
-            <img
-              className="photos img"
-              src="https://image.lexica.art/full_jpg/a59d5df2-b146-48a7-925b-ab3c79186f48"
-              alt="14"
-              onClick={() => cambiarEstadoModal1(!estadoModal1)}
-            />
-
-            <img
-              className="photos img"
-              src="https://image.lexica.art/full_jpg/c9a3129e-6d48-47d7-9265-1ebc4a32c735"
-              alt="2"
-            />
-            <img
-              className="photos img"
-              src="https://image.lexica.art/full_jpg/ee6c8a40-68e0-4dc6-99c1-7261926ad1f6"
-              alt="3"
-            />
-            <img
-              className="photos img"
-              src="https://image.lexica.art/full_jpg/56213690-71a7-4976-99cd-fb222b63d285"
-              alt="4"
-            />
-            <img
-              className="photos img"
-              src="https://image.lexica.art/full_jpg/81e31e64-83b0-43ad-85db-b5909792d993"
-              alt="5"
-            />
-            <img
-              className="photos img"
-              src="https://image.lexica.art/full_jpg/dcf0ee45-125e-47c3-a4bd-0aaa4ff688b1"
-              alt="6"
-            />
-            <img
-              className="photos img"
-              src="https://image.lexica.art/full_jpg/c5e6a686-1106-4744-9b62-bc95d9e360d0"
-              alt="7"
-            />
-            <img
-              className="photos img"
-              src="https://image.lexica.art/full_jpg/59b6bddc-2652-46fb-8f5e-04e0ae09f0df"
-              alt="55"
-            />
-            <img
-              className="photos img"
-              src="https://image.lexica.art/full_jpg/90193690-7742-4280-912b-44579af929c5"
-              alt="44"
-            />
-            <img
-              className="photos img"
-              src="https://image.lexica.art/full_jpg/de1f37dc-2496-4f9a-a4a9-b3dcb62ebbd7"
-              alt="54"
-            />
-            <img
-              className="photos img"
-              src="https://image.lexica.art/full_jpg/a59d5df2-b146-48a7-925b-ab3c79186f48"
-              alt="14"
-            />
+            
           </article>
         </section>
       </div>
