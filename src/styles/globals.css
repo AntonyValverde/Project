@@ -592,7 +592,6 @@ body {
 .calendar-day:hover {
   background-color: #f2f2f2;
 }
-
 /*indexInve*/
 .Textsearch {
   /*indexInve*/
@@ -643,6 +642,9 @@ body {
   margin-top: 10px; /* Espacio superior */
   margin-bottom: 10px; /* Espacio inferior */
   padding-right: 10px;
+}
+.selected-row {
+  background-color: skyblue;
 }
 
 .buttonSearch {
@@ -1292,17 +1294,14 @@ tbody {
 /*Fin_Modal_Mante*/
 
 /*Prueba de ventana */
-.masInfobutton{
-  border: 2px solid #65aaad; 
-  padding: 8px 18px; 
+.masInfobutton {
+  border: 2px solid #65aaad;
+  padding: 8px 18px;
   border-radius: 5px;
   color: #fff;
-  
-
 }
-.masInfobutton:hover{
- background: #162938;
-
+.masInfobutton:hover {
+  background: #162938;
 }
 .modal-overlay {
   position: fixed;
@@ -1324,35 +1323,34 @@ tbody {
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
-.buttonMas{
+.buttonMas {
   float: right;
   margin-bottom: 10px;
 }
-.texh1Mo{
+.texh1Mo {
   text-align: center;
   font-size: 24px;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   margin-top: 10px;
   margin-bottom: 15px;
 }
-.notaModal1{
+.notaModal1 {
   margin-bottom: 15px;
   font-size: large;
   text-align: center;
-
 }
-.notaModal{
+.notaModal {
   margin-bottom: 20px;
   font-size: medium;
   text-align: center;
   background: rgb(238, 230, 230, 0.5);
-  border: 2px solid #65aaad; 
-  padding: 8px 18px; 
+  border: 2px solid #65aaad;
+  padding: 8px 18px;
   border-radius: 5px;
   width: 25vw;
   margin-left: 3vw;
 }
-.DaModalExit{
+.DaModalExit {
   margin-top: 15px;
   margin-bottom: 16px;
   font-size: medium;
@@ -1368,36 +1366,36 @@ tbody {
   margin-bottom: 5px;
   margin-left: 6vw;
   border-radius: 5px;
-  width: 20vw; height:5vh;
+  width: 20vw;
+  height: 5vh;
 }
 .optionValueAdd2:hover {
   /*indexMante*/
   background-color: #284b63;
   color: #fff;
 }
-.buttonAcep{
+.buttonAcep {
   margin-bottom: 10px;
   font-size: medium;
   text-align: center;
   background: rgb(238, 230, 230, 0.5);
-  border: 2px solid #65aaad; 
-  padding: 8px 18px; 
+  border: 2px solid #65aaad;
+  padding: 8px 18px;
   border-radius: 5px;
   width: 15vw;
   margin-left: 8vw;
 }
-.buttonAcep:hover{
+.buttonAcep:hover {
   background-color: #45a049;
   color: #f1f1f1;
 }
 
 /* FIN dePrueba de ventana */
 
-
 /*Inicio 2*/
 
 .modal-overlay2 {
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   position: fixed;
   top: 0;
   left: 0;
@@ -1431,23 +1429,22 @@ tbody {
 }
 
 .modal-content button {
-   padding: 9px 19px;
-   margin-left: 88%;
-   margin-bottom: 3px;
+  padding: 9px 19px;
+  margin-left: 88%;
+  margin-bottom: 3px;
 }
-.impuh1Add{
+.impuh1Add {
   margin-bottom: 8px;
   font-size: medium;
   text-align: center;
   background: rgb(238, 230, 230, 0.5);
-  border: 2px solid #65aaad; 
-  padding: 8px 18px; 
+  border: 2px solid #65aaad;
+  padding: 8px 18px;
   border-radius: 5px;
   width: 25vw;
   margin-left: 3vw;
-  
 }
-.texh2Add{
+.texh2Add {
   margin-top: 5px;
   margin-bottom: 10px;
   font-size: medium;
@@ -1462,7 +1459,8 @@ tbody {
   font-size: medium;
   margin-bottom: 20px;
   border-radius: 5px;
-  width: 20vw; height:5vh;
+  width: 20vw;
+  height: 5vh;
 }
 .optionValueAdd:hover {
   /*indexMante*/
@@ -1471,10 +1469,6 @@ tbody {
 }
 
 /*Fin 2*/
-
-
-
-
 
 /*Paula*/
 .mt-5 {

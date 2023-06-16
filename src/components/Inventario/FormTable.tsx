@@ -2,16 +2,16 @@ import React, { FormEvent, useEffect, useState } from "react";
 import { RiAddCircleLine, RiCloseLine, RiFileList3Line } from "react-icons/ri";
 import "firebase/firestore";
 import "firebase/compat/firestore";
-import { getFirestore, collection, getDocs, addDoc } from "firebase/firestore";
+import {
+  getFirestore,
+  collection,
+  getDocs,
+  addDoc,
+  updateDoc,
+  doc,
+} from "firebase/firestore";
 import firebaseConfig from "@/firebase/config";
 import { initializeApp } from "firebase/app";
-import {
-  Alert,
-  AlertTitle,
-  AlertIcon,
-  AlertDescription,
-} from "@chakra-ui/alert";
-
 const TableForm = () => {
   const [showModal, setShowModal] = useState(false);
   const [id, setId] = useState("");
@@ -23,6 +23,7 @@ const TableForm = () => {
   const [filteredData, setFilteredData] = useState<any[]>([]);
   const [filterValue, setFilterValue] = useState("");
   const [showAlert, setShowAlert] = useState(false);
+  const [selectedData, setSelectedData] = useState<any>(null);
 
   /*Initialize firebase*/
   const app = initializeApp(firebaseConfig);
@@ -99,6 +100,11 @@ const TableForm = () => {
   };
   const handleCloseAlert = () => {
     setShowAlert(false);
+  };
+
+  /* Select a data row from the table */
+  const handleSelectData = (data: any) => {
+    setSelectedData(data);
   };
   return (
     <>
@@ -231,7 +237,11 @@ const TableForm = () => {
               <tbody>
                 {/*A mapping of the data is made to add them to the columns.*/}
                 {filteredData.map((data) => (
-                  <tr key={data.id}>
+                  <tr
+                    key={data.id}
+                    onClick={() => handleSelectData(data)}
+                    className={selectedData === data ? "selected-row" : ""}
+                  >
                     <td>{data.id}</td>
                     <td>{data.repuesto}</td>
                     <td>{data.especificacion}</td>
