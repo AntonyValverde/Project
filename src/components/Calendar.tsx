@@ -1,178 +1,172 @@
 import axios from "axios"; /*Descargar en la terminal con: npm i axios*/
-import React from "react";
-import { useState } from "react";
+import "firebase/compat/firestore";
+import { getFirestore, collection, getDocs, addDoc } from "firebase/firestore";
 import Page_Head from "./PageHead";
 import Page_Footer from "./PageFooter";
-import TableButton from "../components/TableButton";
+import "firebase/firestore";
+import firebaseConfig from "@/firebase/config";
+import { initializeApp } from "firebase/app";
+import React, { useEffect, useState } from "react";
 
-interface TableData {
-  Id_unidad: number;
-  Modelo: string;
-  Marca: string;
-  Año: number;
-  Placa: number;
-  Estado: string;
-  Capacidad: string;
-  Color: string;
-}
+const Calendar = () => {
+    const [showTable, setShowTable] = useState(false);
+    const [busD, setbusD] = useState<any[]>([]);
+    const [tdata, setdata] = useState<any[]>([]);
+    const [filV, setFilV] = useState("");
 
-interface TableProps {
-  datap: TableData[];
-}
-const Calendar: React.FC<TableProps> = ({ datap }) => {
-  const today = new Date();
+    const app = initializeApp(firebaseConfig);
 
-  const meses: { [key: string]: string } = {
-    "01": "enero",
-    "02": "febrero",
-    "03": "marzo",
-    "04": "abril",
-    "05": "mayo",
-    "06": "junio",
-    "07": "julio",
-    "08": "agosto",
-    "09": "septiembre",
-    "10": "octubre",
-    "11": "noviembre",
-    "12": "diciembre",
-  };
-  const data = [
-    { Id_unidad: 1, Estado: "excelente", Capacidad: "fuerte", Color: "Rojo" },
-    { Id_unidad: 2, Estado: "excelente", Capacidad: "fuerte", Color: "Rojo" },
-    { Id_unidad: 3, Estado: "excelente", Capacidad: "fuerte", Color: "Rojo" },
-    { Id_unidad: 4, Estado: "excelente", Capacidad: "fuerte", Color: "Rojo" },
-    { Id_unidad: 5, Estado: "excelente", Capacidad: "fuerte", Color: "Rojo" },
 
-    // Agrega más datos según tus necesidades
-  ];
-  const convertirFecha = (fechaISO: string): string => {
-    let fechaSinHora = fechaISO.split("T")[0];
-    let fechaSeparada = fechaSinHora.split("-") as string[];
-    let dia = fechaSeparada[2];
-    let mes = meses[fechaSeparada[1]];
-    let anho = fechaSeparada[0];
-    const fechaFormateada = `${dia} de ${mes} del ${anho}`;
-    return fechaFormateada;
-  };
+    useEffect(() => {
+        const fetchData = async () => {
+            const db = getFirestore();
+            try {
+                const querydb = await getDocs(collection(db, "RegisterUnits"));
+                const data = querydb.docs.map((doc) => ({
+                    id: doc.id,
+                    ...doc.data(),
+                }));
+                console.log("Data:", data);
+                setdata(data);
+            } catch (error) {
+                console.error("Error fetching data:", error);
+            }
+        };
+        fetchData();
+    }, []);
 
-  const [termino, setTermino] = useState<string>("");
-  const [loading, setLoading] = useState<Boolean>(false);
 
-  const getInformation = async () => {
-    if (termino) {
-      setLoading(true);
-      axios({
-        method: "GET",
-      })
-        .then((res) => {})
-        .catch((err) => {
-          console.log(err);
-        })
-        .finally(() => {
-          setLoading(false);
-        });
-    }
-  };
+    const [termino, setTermino] = useState<string>("");
+    const [loading, setLoading] = useState<Boolean>(false);
 
-  const [fechaNacimiento, setFechaNacimiento] = useState("");
+    const getInformation = async () => {
+        if (termino) {
+            setLoading(true);
+            axios({
+                method: "GET",
+            })
+                .then((res) => { })
+                .catch((err) => {
+                    console.log(err);
+                })
+                .finally(() => {
+                    setLoading(false);
+                });
+        }
+    };
 
-  const [modalIsOpen, setModalIsOpen] = useState(false);
+    useEffect(() => {
+        const filtered = tdata.filter((data) =>
 
-  const openModal = () => {
-    setModalIsOpen(true);
-  };
+            Object.keys(data).some((key) =>
+                data[key].toString().toLowerCase().includes(filV.toLowerCase())
+            )
+        );
+        setbusD(filtered);
+    },
 
-  const closeModal = () => {
-    setModalIsOpen(false);
-  };
+        [filV, tdata]);
 
-  return (
-    <>
-      <header>
-        <Page_Head></Page_Head>
-      </header>
+    const handleFilterChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const { value } = event.target as HTMLInputElement;
+        setFilV(value);
+    };
 
-      <div className="TabCita">
-        <h3 className="text-center">
-          Calendario de Mantenimientos Preventivos
-        </h3>
-        <hr />
-        <div className="contp">
-          <div className="row">
-            <label className="my-3" htmlFor="dateInput">
-              Buses:
-            </label>
-            <div className="col-xl-11 col-lg-11 col-md-10 col-sm-8 col-xs-12">
-              <select id="inputState" className="form-select">
-                <option selected>Buses...</option>
-                <option>...</option>
-              </select>
-            </div>
-          </div>
-          <div className="col-xl-11 col-lg-11 col-md-10 col-sm-8 col-xs-12">
-            <div id="calendar">
-              <div className="col-xl-11 col-lg-11 col-md-10 col-sm-8 col-xs-12">
-                <div className="fechaa">Fecha:</div>
-              </div>
-            </div>
-            <input
-              className="form-control"
-              id="dateInput"
-              type="date"
-              placeholder="Fecha de Nacimiento"
-              value={fechaNacimiento}
-              onChange={(e) => setFechaNacimiento(e.target.value)}
-            />
-            <div className="flit">Filtrar:</div>
-            <div className="d-grid gap-2 d-md-flex justify-content-md-end">
-              <button className="btn btn-primary me-md-2" type="button">
-                Buscar...
-              </button>
-            </div>
-          </div>
-        </div>
-        <hr />
+    const handleButtonClick = () => {
+        setShowTable(!showTable);
+    };
+    return (
+        <>
+            <header>
+                <Page_Head></Page_Head>
+            </header>
 
-        <div className="tablaaa">
-          <table className="tabla2">
-            <thead>
-              <tr>
-                <th>Id_unidad</th>
-                <th>Modelo</th>
-                <th>Marca</th>
-                <th>Año</th>
-                <th>Placa</th>
-              </tr>
-            </thead>
+            <div className="TabCita">
 
-            <tbody>
-              {datap.map((item) => (
-                <tr key={item.Id_unidad}>
-                  <td>{item.Id_unidad}</td>
-                  <td>{item.Modelo}</td>
-                  <td>{item.Marca}</td>
-                  <td>{item.Año}</td>
-                  <td>{item.Placa}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-        <div>
-          <TableButton
-            data={data}
-            Id_unidad={0}
-            Estado={""}
-            Capacidad={""}
-            Color={""}
-          />
-        </div>
-      </div>
+                <h3 className="text-center">
+                    Calendario de Mantenimientos Preventivos
+                </h3>
+                <hr />
+                <div className="contp">
+                    <article>
+                        <div>
+                            <input
+                                className="search"
+                                type="text"
+                                value={filV}
+                                onChange={handleFilterChange}
+                                name="Buscar"
+                                placeholder="Busqueda Filtrada"
+                            />
+                        </div>
+                    </article>
+                </div>
+                <hr />
+                <div className="containerTable">
+                    <table className="tableInven">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Modelo</th>
+                                <th>Marca</th>
+                                <th>Año</th>
+                                <th>Placa</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {busD.map((data) => (
+                                <tr key={data.Unidad}>
+                                    <td>{data.Unidad}</td>
+                                    <td>{data.Modelo}</td>
+                                    <td>{data.Marca}</td>
+                                    <td>{data.Año}</td>
+                                    <td>{data.Placa}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
 
-      <footer>
-        <Page_Footer></Page_Footer>
-      </footer>
-    </>
-  );
+                <div>
+                    <button onClick={handleButtonClick} className="buttonPau">
+                        {showTable ? "Ver -" : "Ver +"}
+                    </button>
+                    {showTable && (
+                        <div className="containerTable">
+                            <table className="tableInven">
+                                <thead>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>Estado</th>
+                                        <th>Disponibilidad</th>
+                                        <th>Capacidad</th>
+                                        <th>Color</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {busD.map((data) => (
+                                        <tr key={data.Unidad}>
+                                            <td>{data.Unidad}</td>
+                                            <td>{data.Estado}</td>
+                                            <td>{data.Disponibilidad}</td>
+                                            <td>{data.Capacidad}</td>
+                                            <td>{data.Color}</td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
+
+                    )}
+
+                </div>
+
+            </div >
+            <footer>
+                <Page_Footer></Page_Footer>
+            </footer>
+
+        </>
+    );
 };
 export default Calendar;
