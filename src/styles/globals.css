@@ -384,7 +384,11 @@ body {
   width: 600px;
   height: 430px;
 }
-
+.contenidoModal{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .image img {
   /*indexUnits*/
   width: 0px;
