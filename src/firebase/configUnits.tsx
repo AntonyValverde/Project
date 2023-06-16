@@ -18,7 +18,7 @@ export const uploadFile = (
     updateCb: (snapshot: UploadTaskSnapshot) => void = () => false
 
 ): Promise<string> => {
-    const path = `youtube/$(file.name)`;
+    const path = `PhotosUnits/$(file.name)`;
     const storageRef = ref(storage, path);
     const uploadTask = uploadBytesResumable(storageRef, file);
     return new Promise((res, rej) => {
@@ -28,7 +28,7 @@ export const uploadFile = (
             () => rej(null),
             () => {
                 getDownloadURL(uploadTask.snapshot.ref).then((downloandURL: string) => {
-                    res(downloandURL)
+                     res(downloandURL) 
                 })
             }
         )

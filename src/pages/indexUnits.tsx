@@ -1,18 +1,33 @@
 import FormButton from "@/components/Units/formulario";
 import ModalUnits from "@/components/Units/ModalUnits";
-import { getFirestore, collection, getDocs } from "@firebase/firestore";
-import React, { useEffect, useState } from "react";
+import "firebase/firestore";
+import "firebase/compat/firestore";
+import { getFirestore, collection, getDocs, addDoc } from "@firebase/firestore";
+import { RiCloseLine } from "react-icons/ri";
+import React, { FormEvent, useEffect, useState } from "react";
 import { uploadFile } from "@/firebase/configUnits";
-import { useParams } from "react-router-dom";
-import firebaseConfig from "@/firebase/config";
+import {
+  Alert,
+  AlertTitle,
+  AlertIcon,
+  AlertDescription,
+} from "@chakra-ui/alert";
 
 export default function indexUnits() {
-  const [isFlipped, setIsFlipped] = useState(false);
+
   const [estadoModal1, cambiarEstadoModal1] = useState(false);
   const [data, setData] = useState<any[]>([]);
   const [link, setLink] = useState<string | null>(null)
+  const [ID, setID] = useState<string | null>("1")
   const [loanding, setLoanding] = useState<boolean>(false)
-   
+  const [tableData, setTableData] = useState<any[]>([]);
+  const [showModal, setShowModal] = useState(false);
+
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
+
 
   const handleFile = async (evt: React.ChangeEvent<HTMLInputElement>) => {
     const { files } = evt.target;
@@ -20,7 +35,27 @@ export default function indexUnits() {
     setLoanding(true)
     const url = await uploadFile(files[0])
     setLink(url)
+    setID(url)
+    const id = url;
+    const imagen = url;
+
     setLoanding(false)
+
+    const newData = {
+      id,
+      imagen
+    };
+
+    try {
+      const db = getFirestore();
+      await addDoc(collection(db, "photosUnits"), newData);
+      setTableData([...tableData, newData]);
+      handleCloseModal();
+
+    } catch (error) {
+      console.error("Error adding data:", error);
+    }
+
   }
 
   useEffect(() => {
@@ -30,12 +65,8 @@ export default function indexUnits() {
       .then((res) => setData(res.docs.map((photosUnits) => ({ id: photosUnits.id, imagen: photosUnits.id, ...photosUnits.data() }))));
   }, []);
 
-  const handleImageClick = () => {
-    setIsFlipped(!isFlipped);
-  };
-
   return (
-    <div>
+    <div >
       <div className="cuadro">
         <header>
           <h1 className="etiqueta">
@@ -57,12 +88,26 @@ export default function indexUnits() {
 
             {data.map((item) => (
               <div className="photos img" key={item.imagen}>
-                <img src={item.imagen} alt="5" onClick={() => cambiarEstadoModal1(!estadoModal1)}/>
-                 
+                <img src={item.imagen} alt="5" onClick={() => cambiarEstadoModal1(!estadoModal1)} />
               </div>
+
             ))}
+ 
+          </article>
+          <article >
+            <ModalUnits estado={estadoModal1} cambiarEstado={cambiarEstadoModal1}>
+              <div className="modalForm">
+                <section className="modal-contentForm">
+                  <button onClick={() => cambiarEstadoModal1(!estadoModal1)}>
+                    <span className="IconCancel">
+                      <RiCloseLine />
+                    </span>
+                  </button>
+                  <img className="photos img" src="/1.png"></img>
+                </section>
+              </div>
 
-
+            </ModalUnits>
           </article>
         </section>
       </div>
@@ -70,13 +115,7 @@ export default function indexUnits() {
       <div>
         <FormButton></FormButton>
       </div>
-      <div>
-        <ModalUnits estado={estadoModal1} cambiarEstado={cambiarEstadoModal1}>
-          <section className="contenidoModal">
-            <img className="photos img" src="/1.png"></img>
-          </section>
-        </ModalUnits>
-      </div>
+
       {/**/}
     </div>
   );
