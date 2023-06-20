@@ -1,12 +1,9 @@
-import Image from "next/image";
 import { Inter } from "next/font/google";
 import Page_Footer from "@/components/PageFooter";
 import Page_Head from "@/components/PageHead";
 import { Josefin_Sans } from "next/font/google";
 import Page_nav from "@/components/PageNav";
 import Link from "next/link";
-import html2canvas from "html2canvas";
-import firebaseConfig from "@/firebase/config";
 
 const inter = Inter({ subsets: ["latin"] });
 

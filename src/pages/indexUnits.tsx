@@ -4,14 +4,8 @@ import "firebase/firestore";
 import "firebase/compat/firestore";
 import { getFirestore, collection, getDocs, addDoc } from "@firebase/firestore";
 import { RiCloseLine } from "react-icons/ri";
-import React, { FormEvent, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { uploadFile } from "@/firebase/configUnits";
-import {
-  Alert,
-  AlertTitle,
-  AlertIcon,
-  AlertDescription,
-} from "@chakra-ui/alert";
 
 export default function indexUnits() {
 
