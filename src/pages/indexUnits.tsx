@@ -9,7 +9,7 @@ import { uploadFile } from "@/firebase/configUnits";
 
 
 
-export default function indexUnits() {
+export default function IndexUnits() {
 
   const [estadoModal1, cambiarEstadoModal1] = useState(false);
   const [data, setData] = useState<any[]>([]);

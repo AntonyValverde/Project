@@ -2,7 +2,7 @@ import TableMante from "@/components/Mante/TableMante";
 import Page_Footer from "@/components/PageFooter";
 import Page_Head from "@/components/PageHead";
 
-export default function indexMante() {
+export default function IndexMante() {
   return (
     <>
       <div>
