@@ -104,7 +104,6 @@ export default function IndexUnits() {
         <header >
           <h1 className="etiqueta">
             Unidades Disponibles
-            <img className="mante" src="/img/disponible.png" alt="imagen" />
           </h1>
         </header>
       </div>
@@ -146,7 +145,7 @@ export default function IndexUnits() {
                       <RiCloseLine />
                     </span>
                   </button>
-                  <img className="photos img" src="/1.png"></img>
+                  {/*<img className="photos img" src="/1.png"></img>*/}
                 </section>
               </div>
 
