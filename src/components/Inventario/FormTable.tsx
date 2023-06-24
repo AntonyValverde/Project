@@ -1,5 +1,10 @@
 import React, { FormEvent, useEffect, useState } from "react";
-import { RiAddCircleLine, RiCloseLine, RiFileList3Line } from "react-icons/ri";
+import {
+  RiAddCircleLine,
+  RiCloseLine,
+  RiEditLine,
+  RiFileList3Line,
+} from "react-icons/ri";
 import "firebase/firestore";
 import "firebase/compat/firestore";
 import {
@@ -8,6 +13,7 @@ import {
   getDocs,
   addDoc,
   updateDoc,
+  serverTimestamp,
   doc,
 } from "firebase/firestore";
 import firebaseConfig from "@/firebase/config";
@@ -67,11 +73,11 @@ const TableForm = () => {
     e.preventDefault();
 
     const newData = {
-      id,
-      repuesto,
-      especificacion,
-      cantidad,
-      precio,
+      id: Number(id),
+      repuesto: String(repuesto),
+      especificacion: String(especificacion),
+      cantidad: Number(cantidad),
+      precio: Number(precio),
     };
 
     try {
@@ -101,15 +107,47 @@ const TableForm = () => {
   const handleCloseAlert = () => {
     setShowAlert(false);
   };
-
+  //ModifiedTable
   /* Select a data row from the table */
   const handleSelectData = (data: any) => {
     setSelectedData(data);
+    setId(data.id);
+    setRepuesto(data.repuesto);
+    setEspecificacion(data.especificacion);
+    setCantidad(data.cantidad);
+    setPrecio(data.precio);
+    setShowModal(true);
+  };
+  const handleUpdateData = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const updatedData = {
+      id: Number(id),
+      repuesto: String(repuesto),
+      especificacion: String(especificacion),
+      cantidad: Number(cantidad),
+      precio: Number(precio),
+    };
+
+    try {
+      const db = getFirestore();
+      await updateDoc(doc(db, "Inventario", selectedData.id), updatedData);
+      const updatedTableData = tableData.map((data) =>
+        data.id === selectedData.id ? updatedData : data
+      );
+      setTableData(updatedTableData);
+      handleCloseModal();
+      resetForm();
+      setShowAlert(true);
+    } catch (error) {
+      console.error("Error al actualizar los datos:", error);
+    }
   };
   return (
     <>
       <div>
         {/*The modal is created with the inputs and the methods are passed to it.*/}
+
         {showModal && (
           <div className="modalForm">
             <div className="modal-contentForm">
@@ -195,10 +233,18 @@ const TableForm = () => {
                   </span>
                   Cancelar
                 </button>
+
+                <button className="buttonUpdate" type="submit">
+                  <span className="updateIcon">
+                    <RiEditLine />
+                  </span>
+                  Modificar
+                </button>
               </form>
             </div>
           </div>
         )}
+
         {showAlert && (
           <div className="alert-popup show">
             <p className="alert-message">
@@ -253,7 +299,6 @@ const TableForm = () => {
             </table>
           </div>
         </article>
-
         <button className="buttonSearch" onClick={() => setShowModal(true)}>
           Agregar datos
         </button>

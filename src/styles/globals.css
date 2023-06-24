@@ -384,7 +384,7 @@ body {
   width: 600px;
   height: 430px;
 }
-.contenidoModal{
+.contenidoModal {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -835,7 +835,7 @@ body {
   color: #fff;
   border-radius: 4px;
   margin-top: -11%;
-  margin-left: 35%;
+  margin-left: 71%;
   display: flex;
   align-items: center;
   font-family: "Josefin_Sans";
@@ -844,6 +844,24 @@ body {
   margin-right: 5px;
 }
 .ButtonCancel:hover {
+  background-color: #454545;
+}
+
+.buttonUpdate {
+  padding: 8px 16px;
+  background-color: yellowgreen;
+  color: #fff;
+  border-radius: 4px;
+  margin-top: -11%;
+  margin-left: 34%;
+  display: flex;
+  align-items: center;
+  font-family: "Josefin_Sans";
+}
+.updateIcon {
+  margin-right: 5px;
+}
+.buttonUpdate:hover {
   background-color: #454545;
 }
 
@@ -2004,23 +2022,22 @@ tbody {
 }
 /*****************pau*/
 .search {
-  
   font-family: "Josefin_Sans";
   font-size: 25px;
   margin-inline: 10.8%;
   margin-top: 2%;
   margin-bottom: 2%;
- margin-left: 3%;
+  margin-left: 3%;
   background-color: #212529;
   border-radius: 8px;
   color: #ffff;
 }
 
-  .buttonPau {
-      font-size: 20px;
-      margin-inline: 10.8%;
-      margin-top: 2%;
-      margin-bottom: 2%;
-     margin-left: 3%;
-    border-radius: 8px;
-  }
+.buttonPau {
+  font-size: 20px;
+  margin-inline: 10.8%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  margin-left: 3%;
+  border-radius: 8px;
+}
