@@ -62,7 +62,7 @@ const FormButton = () => {
       html2canvas(formulary).then((canvas) => {
         canvas.toBlob((blob) => {
           if (blob) {
-            saveAs(blob, "formulario.png");
+            saveAs(blob, "formulario"+Placa+".png");
             
           } else {
             console.log("Error al generar el objeto Blob.");
@@ -72,6 +72,7 @@ const FormButton = () => {
     } else {
       console.log("El elemento del formulario no existe.");
     }
+    botonClick();
   };
   const handleCloseModal = () => {
     setShowModal(false);
@@ -91,15 +92,15 @@ const FormButton = () => {
             <article
               ref={formularioRef}
               className="containerTwo"
-              id="formulario"
+              id="formulary"
             >
-              <div className="wrapper">
+              <div className="wrapper" id="formulario">
                 <div className="form-box login">
                   <span className="closeForm" onClick={botonClick}>
                     &times;
                   </span>
                   <h2>Units</h2>
-                  <form onSubmit={handleSubmit} action="#" id="formulary">
+                  <form onSubmit={handleSubmit} action="#">
                     <div className="input-box">
                       <span className="icon"></span>
                       <input

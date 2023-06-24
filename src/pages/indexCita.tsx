@@ -5,7 +5,7 @@ import Calendar from "@/components/Calendar";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function indexCita() {
+export default function IndexCita() {
  
   return (
     <>

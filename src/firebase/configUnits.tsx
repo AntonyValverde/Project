@@ -36,4 +36,6 @@ export const uploadFile = (
 
 };
 
+
+
 export default firebaseConfig
