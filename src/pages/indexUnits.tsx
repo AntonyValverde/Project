@@ -7,7 +7,6 @@ import { RiCloseLine } from "react-icons/ri";
 import React, { useEffect, useState } from "react";
 import { uploadFile } from "@/firebase/configUnits";
  
-
 export default function IndexUnits() {
 
   const [estadoModal1, cambiarEstadoModal1] = useState(false); {/*Para ventana emergente*/}
