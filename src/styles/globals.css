@@ -805,6 +805,265 @@ body {
   font-weight: 600;
   padding: 0 35px 0 5px;
 }
+.cuadro {
+  /*indexUnits*/
+  position: relative;
+  background-color: #3c6e71;
+  width: valor;
+  height: 50px;
+}
+
+.text {
+  /*indexUnits*/
+  color: #333;
+  font-size: 30px;
+  font-family: "Josefin_Sans";
+}
+
+.busEtiqueta {
+  /*indexUnits*/
+  width: 600px;
+  height: 200px;
+  margin-inline: 30%;
+  margin-right: 100px;
+  margin-top: 45px;
+  border-radius: 10px;
+}
+
+/*.labelSquare{
+  ¿?
+
+  color: #333;
+  border: 1px solid #333;
+  margin-top: 10px;
+  margin-right: 0px;
+  margin-left: 0px;
+  box-shadow: 8px 8px 5px #888;
+}*/
+
+.photos {
+  /*indexUnits*/
+  display: flex;
+  width: 600px;
+  height: 430px;
+}
+
+
+
+.results {
+  /*indexUnits*/
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding: 0;
+}
+
+.results .item-container {
+  /*indexUnits*/
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 8px;
+  margin-right: 8px;
+  margin-bottom: 8px;
+}
+
+.results .item-container p {
+  /*indexUnits*/
+  margin: 0;
+}
+
+.photos img {
+  /*indexUnits*/
+  width: 0px;
+  flex-grow: 1;
+  object-fit: cover;
+  opacity: 0.8;
+  transition: 0.5s ease;
+}
+
+.photos img:hover {
+  /*indexUnits*/
+  cursor: pointer;
+  width: 300px;
+  opacity: 1;
+  filter: contrast(120%);
+}
+
+.Units {
+  /*indexUnits*/
+
+  background: rgb(238, 230, 230);
+  color: #333;
+  border: 1px solid #333;
+  margin: 10px;
+  margin-top: 50px;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 8px 8px 5px #888;
+  margin-left: 18%;
+  width: 1000px;
+  height: 450px;
+}
+
+.image {
+  display: flex;
+  width: 600px;
+  height: 430px;
+}
+
+.contenidoModal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image img {
+  /*indexUnits*/
+  width: 0px;
+  flex-grow: 1;
+  object-fit: cover;
+  opacity: 0.8;
+  transition: 0.5s ease;
+
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.image img:hover {
+  /*indexUnits*/
+  cursor: pointer;
+  width: 300px;
+  opacity: 1;
+  filter: contrast(120%);
+}
+
+.image.flipped {
+  transform: rotateY(180deg);
+}
+
+.container-content {
+  width: 0px;
+  flex-grow: 1;
+  object-fit: cover;
+  opacity: 0.8;
+  transition: 0.5s ease;
+  position: absolute;
+  background-color: #f1f1f1;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.container-content.visible {
+  position: absolute;
+  display: flex;
+  opacity: 1;
+}
+
+/* Responsive Styles indexUnits*/
+@media (max-width: 768px) {
+  .photos {
+      width: 90%;
+      height: auto;
+      margin: 0 auto;
+  }
+
+  .photos img {
+      width: 0;
+      flex-grow: 1;
+  }
+
+  .photos img:hover {
+      width: 50%;
+      filter: contrast(120%);
+  }
+
+  .Units {
+      width: 90%;
+      height: auto;
+      margin-left: 5%;
+  }
+}
+
+/* Responsive Styles indexUnits*/
+@media (max-width: 480px) {
+  .photos {
+      display: block;
+      width: 90%;
+      height: auto;
+      margin: 0 auto;
+  }
+
+  .photos img {
+      width: 100%;
+      flex-grow: 0;
+  }
+
+  .photos img:hover {
+      width: 100%;
+      filter: contrast(120%);
+  }
+
+  .Units {
+      width: 90%;
+      height: auto;
+      margin-left: 5%;
+  }
+}
+
+.containerTwo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  /* Opcional: ajusta la altura al 100% del viewport */
+  margin: 0 auto;
+  width: 80%;
+  position: center;
+  padding: 30%;
+  margin-left: 10%;
+}
+
+.buttonCRUDagregar {
+  background: #3a9950;
+  color: #d9d9d9;
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  border-radius: 4px;
+  margin-bottom: 5px;
+  margin-top: 2%;
+  margin-left: 40%;
+  margin-right: 40%;
+  font-family: "Josefine_Sans";
+  font-size: 18px;
+  text-align: center;
+  cursor: cell;
+}
+
+.search-bar {
+  height: 200px;
+  display: flex;
+  margin-top: 50px;
+  align-items: center;
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+
+  max-width: 300px;
+
+  flex-direction: column;
+}
+
+.inputY {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+}
+
 
 
 
@@ -1116,6 +1375,7 @@ tbody {
   color: #fff;
 }
 
+
 .buttonAcep {
   margin-bottom: 10px;
   font-size: medium;
@@ -1171,6 +1431,84 @@ tbody {
     margin-left: 5vw;
   }
 
+}
+
+
+
+.input-box .icon {
+  /*formulario*/
+  position: absolute;
+  right: 8px;
+  font-size: 1.2em;
+  color: #162938;
+  line-height: 57px;
+}
+
+.remember-forgot {
+  /*formulario*/
+  font-size: 0.9em;
+  color: #162938;
+  font-weight: 500;
+  margin: -15px 0 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.remember-forgot label input {
+  /*formulario*/
+  accent-color: #162938;
+  margin-right: 3px;
+}
+
+.remember-forgot a {
+  /*formulario*/
+  color: #162938;
+  text-decoration: none;
+}
+
+.remember-forgot a:hover {
+  /*formulario*/
+  text-decoration: underline;
+}
+
+.boton-desplegable {
+  /*formulario*/
+  position: relative;
+}
+
+.boton-desplegable .contenido-desplegado {
+  /*formulario*/
+  display: none;
+  padding: 10px;
+  background-color: #d9d9d9;
+
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  transition: height 0.3s ease;
+}
+
+.boton-desplegable.desplegado .contenido-desplegado {
+  /*formulario*/
+  display: block;
+}
+
+.butonCenter {
+  margin: 0 auto;
+  display: block;
+
+  background: #3a9950;
+  color: #d9d9d9;
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  border-radius: 4px;
+  margin-bottom: 5px;
+  font-family: "Josefine_Sans";
+  font-size: 18px;
+  text-align: center;
+  cursor: cell;
 }
 
 

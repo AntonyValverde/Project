@@ -13,17 +13,14 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const storage = getStorage();
 
- 
-
- 
-
 export const uploadFile = (
-     
     file: File,
+    dato: string,
     updateCb: (snapshot: UploadTaskSnapshot) => void = () => false
 
 ): Promise<string> => {
-    const path = `PhotosUnits/$(file.name`  ;
+
+    const path = `PhotosUnits/$(file.name`+dato+`)` ;
     const storageRef = ref(storage, path);
     const uploadTask = uploadBytesResumable(storageRef, file);
     return new Promise((res, rej) => {
