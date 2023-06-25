@@ -6,72 +6,105 @@ import { getFirestore, collection, getDocs, addDoc, query, where } from "@fireba
 import { RiCloseLine } from "react-icons/ri";
 import React, { useEffect, useState } from "react";
 import { uploadFile } from "@/firebase/configUnits";
-
-
-
+ 
 export default function IndexUnits() {
 
-  const [estadoModal1, cambiarEstadoModal1] = useState(false);
-  const [data, setData] = useState<any[]>([]);
-  const [link, setLink] = useState<string | null>(null)
-  const [ID, setID] = useState<string | null>("1")
-  const [loanding, setLoanding] = useState<boolean>(false)
-  const [tableData, setTableData] = useState<any[]>([]);
-  const [showModal, setShowModal] = useState(false);
-  const [searchTerm, setSearchTerm] = useState('');
-  const [state, setState] = useState();
-  const [date, setDate] = useState<any[]>([]);
+  const [estadoModal1, cambiarEstadoModal1] = useState(false); {/*Para ventana emergente*/}
+  const [data, setData] = useState<any[]>([]); {/*Para cargar datos de la firebase*/}
+  const [link, setLink] = useState<string | null>(null) // Para cargar el link de la imagen subida a storage
+  const [ID, setID] = useState<string | null>("1") // Para cargar el id de la imagen 
+  const [loanding, setLoanding] = useState<boolean>(false) // Verifica la subida de la imagen a storage
+  const [tableData, setTableData] = useState<any[]>([]); {/*Carga la variable con las imagenes subidas y pasadas a firebase*/}
+  const [showModal, setShowModal] = useState(false); {/*Para el formulario*/}
+  const [searchTerm, setSearchTerm] = useState(''); {/*Es la variable del buscador*/}
+  const [date, setDate] = useState<any[]>([]); {/*Carga datos de la firebase*/}
+  const [selectedItem, setSelectedItem] = useState(null); {/*Guarda el momento actual del dato de la firebase*/}
 
-  useEffect(() => {
+  useEffect(() => { {/*Busca en la firebase las placas buscadas por la "searchTerm" */}
     const fetchData = async () => {
-      const querydb = getFirestore();  
-      const queryCollection = collection(querydb, 'RegisterUnits');  
-  
-       
+      const querydb = getFirestore();
+      const queryCollection = collection(querydb, 'photosUnits');
+
+
       if (searchTerm !== '') {
-        const q = query(queryCollection, where('Placa', 'array-contains', searchTerm ));  
-  
+        const q = query(queryCollection, where('id', '==', searchTerm));
+
         try {
-          const querySnapshot = await getDocs(q);  
-          const results = querySnapshot.docs.map((RegisterUnits) => ({
-            Placa: RegisterUnits.id,
-            ...RegisterUnits.data()
-          }));  
-          setDate(results);  
+          const querySnapshot = await getDocs(q);
+          const results = querySnapshot.docs.map((photosUnits) => ({
+            id: photosUnits.id, imagen: photosUnits.id,
+            ...photosUnits.data()
+          }));
+          setDate(results);
         } catch (error) {
-          console.error('Error fetching data:', error);  
+          console.error('Error fetching data:', error);
         }
       } else {
-         
+
         setDate([]);
       }
-    };
-  
-    fetchData();  
+    }
+
+    fetchData();
   }, [searchTerm]);
 
-  useEffect(() => {
+
+  interface ModalUnitsProps { //Interfaz de una ventana emergente con varias variables
+    estado: boolean;
+    cambiarEstado: (estado: boolean) => void;
+    selectedItem: any;
+    children?: React.ReactNode;
+  }
+
+  const ModalUnits: React.FC<ModalUnitsProps> = ({ estado, cambiarEstado, selectedItem }) => { //Abre la ventana emergente para mostrar la imagen 
+
+    console.log(selectedItem?.imagen);
+    
+
+    return (
+      <div style={{ display: estado ? 'block' : 'none' }}>  
+        <div className="modalForm">
+          <section className="modal-contentForm">
+            <button onClick={() => cambiarEstado(false)}>
+              <span className="IconCancel">
+                <RiCloseLine />
+              </span>
+            </button>
+            {selectedItem && ( 
+              <div>
+                <img src={selectedItem.imagen}></img>
+              </div>
+            )}
+          </section>
+        </div>
+      </div>
+    );
+  };
+
+
+  useEffect(() => { {/*Pide datos de la firebase para cargar las imagenes*/}
     const querydb = getFirestore();
     const queryCollection = collection(querydb, 'photosUnits');
     getDocs(queryCollection)
       .then((res) => setData(res.docs.map((photosUnits) => ({ id: photosUnits.id, imagen: photosUnits.id, ...photosUnits.data() }))));
   }, []);
 
-  const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {  {/*Lee cada cambio en la barra de busqueda*/}
     setSearchTerm(event.target.value);
   };
 
-  const handleCloseModal = () => {
+  const handleCloseModal = () => { {/*Cierra el formulario*/}
     setShowModal(false);
   };
 
-  const handleFile = async (evt: React.ChangeEvent<HTMLInputElement>) => {
+  const handleFile = async (evt: React.ChangeEvent<HTMLInputElement>) => {  {/*Sube el archivo de imagen seleccionado a la storage*/}
     var dato = prompt("Por favor, ingresa el numero de placa:");
-    if (dato !== null && dato !== "") {
+    if (dato !== null && dato !== "") { {/*Si se coloca una placa entra a la condicion*/}
       const { files } = evt.target;
-      if (!files || !files.length) return;
+      if (!files || !files.length) return;  {/*Lee los archivos seleccionados y verifica si existen o si hay al menos uno*/}
       setLoanding(true)
-      const url = await uploadFile(files[0])
+       
+      const url = await uploadFile(files[0]) // Sube el archivo a la storage y obtiene la URL de la imagen subida
       setLink(url)
       setID(url)
       const id = dato;
@@ -100,65 +133,53 @@ export default function IndexUnits() {
 
   return (
     <div >
-      <div className="cuadro">
+      <div className="cuadro">{/*El contenedor del header*/}
         <header >
           <h1 className="etiqueta">
             Unidades Disponibles
           </h1>
         </header>
       </div>
-      <div>
+      <div>{/*Todo el cuarpo de la app*/}
         <section>
-          <article>
+          <article>{/*Espacio donde van los componentes mensionados*/}
             <div className="search-bar">
-              <input type="text" placeholder="Buscar" className="inputY" value={searchTerm} onChange={handleSearchChange} />
-              <input accept="" multiple onChange={handleFile} type="file" />
-              <ul className="results">
+              <input type="text" placeholder="Buscar" className="inputY" value={searchTerm} onChange={handleSearchChange} />{/*Barra de busqueda*/}
+              <input accept="" multiple onChange={handleFile} type="file" />{/*Te manda a buscar una imagen a tu archivero*/}
+              <ul className="results">{/*Un contenedor para las respuestas*/}
                 {date.map((item, index) => (
-                  
-                  <div key={index} className="item-container" onClick={() => cambiarEstadoModal1(!estadoModal1)} >
-                    <p > {item.Placa} </p>
+                  <div key={index} className="item-container" onClick={() => { cambiarEstadoModal1(!estadoModal1); setSelectedItem(item ) }}>{/*Recorre las placas encontradas*/}
+                    <p>{item.id}</p>
                   </div>
                 ))}
               </ul>
             </div>
-            
+
           </article>
 
-          <article className="Units photos">
+          <article className="Units photos">{/*Un contenedor donde van las imagenes*/}
 
             {data.map((item) => (
-              
-              <div className="photos img" key={item.imagen}>
-                <img src={item.imagen} alt="5" onClick={() => cambiarEstadoModal1(!estadoModal1)} />
+
+              <div className="photos img" key={item.imagen} onClick={() => {cambiarEstadoModal1(!estadoModal1); setSelectedItem(item)}}>{/*Recorre todas las imagenes de la Firebase*/}
+                <img src={item.imagen} alt="5" />
               </div>
 
             ))}
 
           </article>
-          <article >
-            <ModalUnits estado={estadoModal1} cambiarEstado={cambiarEstadoModal1}>
-              <div className="modalForm">
-                <section className="modal-contentForm">
-                  <button onClick={() => cambiarEstadoModal1(!estadoModal1)}>
-                    <span className="IconCancel">
-                      <RiCloseLine />
-                    </span>
-                  </button>
-                  {/*<img className="photos img" src="/1.png"></img>*/}
-                </section>
-              </div>
-
+          <article >{/*La funcion de los onCiick mandan parametros por esta funcion*/}
+            <ModalUnits estado={estadoModal1} cambiarEstado={cambiarEstadoModal1} selectedItem={selectedItem}>
             </ModalUnits>
           </article>
         </section>
       </div>
 
-      <div>
+      <div>{/*Formulario*/}
         <FormButton></FormButton>
       </div>
 
-      {/**/}
+       
     </div>
   );
 }

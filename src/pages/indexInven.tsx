@@ -3,7 +3,7 @@ import Page_Head from "@/components/PageHead";
 import TableForm from "@/components/Inventario/FormTable";
 import { FormEvent, useState } from "react";
 
-export default function indexInven() {
+export default function IndexInven() {
   return (
     <>
       <div>
