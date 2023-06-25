@@ -104,7 +104,7 @@ export default function IndexUnits() {
       if (!files || !files.length) return;  {/*Lee los archivos seleccionados y verifica si existen o si hay al menos uno*/}
       setLoanding(true)
        
-      const url = await uploadFile(files[0]) // Sube el archivo a la storage y obtiene la URL de la imagen subida
+      const url = await uploadFile(files[0], dato) // Sube el archivo a la storage y obtiene la URL de la imagen subida
       setLink(url)
       setID(url)
       const id = dato;

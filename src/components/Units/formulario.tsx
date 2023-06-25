@@ -38,7 +38,7 @@ const FormButton = () => {
 
     try {
       const db = getFirestore();
-      await addDoc(collection(db, "RegisterUnits"), newData);
+      await addDoc(collection(db, "RegistroUnidades"), newData);
       setTableData([...tableData, newData]);
       handleCloseModal();
        
@@ -214,7 +214,6 @@ const FormButton = () => {
           </div>
         )}
       </div>
-
       <Page_Footer></Page_Footer>
     </div>
   );
