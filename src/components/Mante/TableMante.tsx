@@ -1,7 +1,24 @@
 import PropTypes from 'prop-types'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import "firebase/compat/firestore";
+import "firebase/firestore";
+import firebaseConfig from "@/firebase/config";
+import { initializeApp } from "firebase/app";
+
+import { getFirestore, collection, getDocs } from 'firebase/firestore';
+import { data } from 'autoprefixer';
 
 export default function TableMante() {
+
+
+    const [docsDbBUs, setDocsDbBUs] = useState<any[]>([]);
+    const [docsDbIn, setDocsDbIn] = useState<any[]>([]);
+
+    /*inicio de DataBase*/
+    const app = initializeApp(firebaseConfig);
+
+
+    /* Ventana Modal de Mas información.*/
     const [isOpen, setIsOpen] = useState(false);
     const openModal = () => {
         setIsOpen(true);
@@ -9,6 +26,7 @@ export default function TableMante() {
     const closeModal = () => {
         setIsOpen(false);
     };
+    /* Ventana Modal de agregar.*/
     const [isOpen2, setIsOpen2] = useState(false);
     const openModal2 = () => {
         setIsOpen2(true);
@@ -16,6 +34,48 @@ export default function TableMante() {
     const closeModal2 = () => {
         setIsOpen2(false);
     };
+
+
+    useEffect(() => {
+        /* Consuminedo los dato de Bd */
+        const fetchData = async () => {
+            const db = getFirestore();
+            try {
+                const querydb = await getDocs(collection(db, "RegisterUnits"));
+                const data = querydb.docs.map((doc) => ({
+                    id: doc.id,
+                    ...doc.data(),
+                }));
+                console.log('Data:', data);
+                setDocsDbBUs(data);
+
+            } catch (error) {
+                console.error("Error fetching data:", error);
+            }
+        };
+        fetchData();
+    }, []);
+
+    useEffect(() => {
+        const fetchData2 = async () => {
+            const db = getFirestore();
+            try {
+                const querydb2 = await getDocs(collection(db, "Inventario"));
+                const dataIn = querydb2.docs.map((doc) => ({
+                    id: doc.id,
+                    ...doc.data(),
+                }));
+                console.log('Data:', dataIn);
+                setDocsDbIn(dataIn);
+            } catch (error) {
+                console.error("Error fetching data:", error);
+            }
+        };
+        fetchData2();
+
+    }, []);
+
+
     return (
         <>
 
@@ -38,41 +98,47 @@ export default function TableMante() {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>01</td>
-                            <td>648122</td>
-                            <td>06/06/21</td>
-                            <td>Cambio de LLanta</td>
-                            <td>$100</td>
-                            <td>
-                                <div>
-                                    <button className='masInfobutton' onClick={openModal}>Más información</button>
-                                    {isOpen && (
+                        {docsDbBUs.map((data) => docsDbIn.map((dataIn) => ((
 
-                                        <div className="modal-overlay">
+                            <tr key={data.Unidad || dataIn.id}>
+                                <td>{data.Unidad}</td>
+                                <td>{data.Placa}</td>
+                                <td>{data.Año}</td>
+                                <td>{data.Capacidad}</td>
+                                <td>{data.Marca}</td>
 
-                                            <div className="modal-content1">
-                                                <button className='.modal-content button buttonMas'  onClick={closeModal}>X</button>
+                                <td>
+                                    <div>
+                                        <button className='masInfobutton' onClick={openModal}>Más información</button>
+                                        {isOpen && (
+
+                                            <div className="modal-overlay">
+
+                                                <div className="modal-content1">
+                                                    <button className='.modal-content button buttonMas' onClick={closeModal}>X</button>
 
 
-                                                <h1 className='texh1Mo'> Más Información</h1>
-                                                
-                                                <p className='notaModal1'> Reporte General</p>
-                                                <p className='notaModal'> Se le cambio una solo llanta el resto todo bien</p>
+                                                    <h1 className='texh1Mo'> Más Información</h1>
 
-                                                <h1 className='DaModalExit'> Fecha de salida: <h2 className='notaModal'>06/06/21 </h2> </h1>
+                                                    <p className='notaModal1'> Reporte General</p>
+                                                    <p className='notaModal'>{data.Color}</p>
 
-                                                <h1 className='DaModalExit'> Estado: <h2 className='notaModal'>Disponible</h2> </h1>
-                                                <h1 className='DaModalExit'> Tipo de Servicio: <h2 className='notaModal'>Preventivo</h2> </h1>
-                                                 
+                                                    <h1 className='DaModalExit'> Fecha de salida: <h2 className='notaModal'>{data.Año} </h2> </h1>
 
-                                                <button className='buttonAcep' onClick={closeModal}>Aceptar</button>
+                                                    <h1 className='DaModalExit'> Estado: <h2 className='notaModal'>{data.Disponibilidad}</h2></h1>
+
+                                                    <h1 className='DaModalExit'> Tipo de Servicio: <h2 className='notaModal'>{dataIn.especificacion}</h2> </h1>
+
+                                                    <h1 className='DaModalExit'> Materiales Utiizados <h2 className='notaModal'>{data.Modelo}</h2> </h1>
+                                                    <button className='buttonAcep' onClick={closeModal}>Aceptar</button>
+                                                </div>
                                             </div>
-                                        </div>
-                                    )}
-                                </div>
-                            </td>
-                        </tr>
+                                        )}
+                                    </div>
+                                </td>
+
+                            </tr>
+                        ))))};
 
                     </tbody>
                 </table>
@@ -81,8 +147,8 @@ export default function TableMante() {
                 <button className="buttonSearch" onClick={openModal2} >Agregar</button>
                 {isOpen2 && (
                     <div className="modal-overlay2">
-                        <div className="modal-content">
-                            <button className='.modal-content button ' onClick={closeModal2}>X</button>
+                        <div className="modal-content2">
+                            <button className='.modal-content button buttonMas ' onClick={closeModal2}>X</button>
 
                             <h1 className='texh2Add'>  ID:</h1>
                             <input className='impuh1Add' type="texts" placeholder=' ID' />
