@@ -18,7 +18,7 @@ export default function Home() {
         <Page_nav></Page_nav>
       </nav>
 
-      <section className="container flex text">
+      <section className="flex text">
         <div className="column">
           <h3 className="title">Register Units</h3>
           <img className="images" src="/img/unidades.png" alt="Not Found" />
