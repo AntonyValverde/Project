@@ -4,6 +4,7 @@ import Page_Head from "@/components/PageHead";
 import { Josefin_Sans } from "next/font/google";
 import Page_nav from "@/components/PageNav";
 import Link from "next/link";
+import router from "next/router";
 
 const inter = Inter({ subsets: ["latin"] });
 

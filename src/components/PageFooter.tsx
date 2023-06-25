@@ -9,7 +9,7 @@ const Page_Footer = ({}) => {
           <img className="correo" src="/img/correo.png" alt="Not Found" />
           <img className="ubicacion" src="/img/mapa.png" alt="Not Found" />
           <p className="text4">Universidad Nacional De Costa Rica</p>
-          <h6 className="copy">Copyright ® 2023</h6>
+          <h6 className="copy">© UNA 2023</h6>
         </footer>
       </div>
       <img></img>
