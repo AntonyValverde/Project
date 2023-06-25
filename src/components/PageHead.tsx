@@ -1,5 +1,5 @@
 import router from "next/router";
-import { RiHome2Line } from "react-icons/ri";
+import { RiHome2Line, RiMoonFill } from "react-icons/ri";
 import { Link } from "react-router-dom";
 const InicioLinkClick = (event: { preventDefault: () => void }) => {
   event.preventDefault();
