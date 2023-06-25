@@ -62,7 +62,7 @@ const FormButton = () => {
       html2canvas(formulary).then((canvas) => {
         canvas.toBlob((blob) => {
           if (blob) {
-            saveAs(blob, "formulario"+Placa+".png");
+            saveAs(blob, "Bus_Placa_"+Placa+".png");
             
           } else {
             console.log("Error al generar el objeto Blob.");
