@@ -13,6 +13,7 @@
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
+   
   }
 }
 
@@ -274,6 +275,7 @@ body.dark {
 @media (max-width: 480px) {
   .PageFooter {
     margin-top: 46%;
+    width: 100vw;
   }
 }
 
@@ -321,7 +323,7 @@ body.dark {
 }
 
 .dark-mode {
-  background-color: #1a1a1a;
+  background-color: #3a3b3c;
   color: #000;
 }
 
@@ -1104,8 +1106,15 @@ body.dark {
 }
 
 /*Mantenimiento julio */
-/* search*/
 
+.containerTable2 {
+  max-height: 300px;
+  overflow-y: auto;
+  margin-top: 10px; /* Espacio superior */
+  margin-bottom: 10px; /* Espacio inferior */
+  padding-right: 10px;
+  background-color: #162938;
+}
 .search-container {
   margin-left: 1%;
   margin-bottom: 10px;
@@ -1115,13 +1124,6 @@ body.dark {
   /*margin-right: 1%;*/
   color: #fff;
 }
-.titul2 {
-  float: right;
-  margin-right: 18%;
-  font-size: 27px;
-  margin-top: 1%;
-}
-
 .input-search[type="text"] {
   /*indexMante*/
   width: 35%;
@@ -1133,80 +1135,48 @@ body.dark {
   border-radius: 1vw;
   margin-right: 0%;
 }
-
-@media (max-width: 768px) {
-  /*indexMante*/
-  .search-container {
-    margin-top: 10vw;
-    margin-right: 0;
-  }
-  .titul2 {
-    float: none;
-    margin-right: 0;
-    text-align: right;
-  }
-
-  .input-search[type="text"] {
-    padding: 2vw;
-    border-radius: 2vw;
-  }
-
-  .button-search[type="submit"] {
-    padding: 2vw 4vw;
-    border-radius: 1vw;
-  }
+.titul2 {
+  float: right;
+  margin-right: 18%;
+  font-size: 27px;
+  margin-top: 1%;
 }
 
-.TabMante {
-  width: 73%;
-  height: auto;
-  margin-top: 10%;
-  margin-left: 10%;
-  background-color: #284b63;
-  /* background-color: violet;*/
-}
-
-.table1 {
+/*Table of Contents */
+.tableMant {
   /*indexMante*/
   margin-top: 1%;
   font-family: "Josefin_Sans";
   font-size: 20px;
   border-collapse: collapse;
-  width: 30%;
+  width: 80%;
   margin-left: 10.5%;
-  margin-bottom: 10px;
   background-color: #284b63;
   border: 2px solid #3c6e71;
 }
 
-.tabla1 th,
-.tabla1 td {
+.tableMant th,
+.tableMant td {
   /*indexMante*/
   border: 1px solid #ddd;
-  padding: 10px;
+  padding: 8px;
   text-align: left;
 }
 
-.tabla1 th {
+.tableMant th {
   /*indexMante*/
   background-color: #353535;
   color: white;
-  width: 15%;
 }
 
-.tabla1 tr:nth-child(even) {
+.tableMant tr:nth-child(even) {
   /*indexMante*/
   background-color: #ffff;
 }
 
 @media (max-width: 768px) {
   /*indexMante*/
-  .TabMante {
-    width: 90%;
-    margin: 5% auto;
-  }
-
-  .tabla1 {
+  .tableMant {
     font-size: 16px;
     width: 90%;
     margin-left: 5%;
@@ -1215,91 +1185,15 @@ body.dark {
 
 @media (max-width: 576px) {
   /*indexMante*/
-
-  .TabMante {
-    width: 90%;
-    margin: 5% auto;
-    font-size: small;
-  }
-  .tabla1 {
-    font-size: small;
+  .tableMant {
+    font-size: 14px;
     width: 95%;
-    margin-left: 2.5%;
+    margin-left: 3.5%;
+    margin-top: 2%;
   }
 }
+/*End of table of contents*/
 
-tbody {
-  /*indexMante*/
-  background: #3c6e71;
-}
-
-.optionValue {
-  /*indexMante*/
-  color: #353535;
-  background-color: #d9d9d9;
-  text-align: left;
-  font-family: "Josefin_Sans";
-  margin-left: 5%;
-  margin-bottom: 20px;
-  border-radius: 5%;
-  width: 50%;
-  height: 1.9vw;
-}
-
-.buntoTabale {
-  border-radius: 5%;
-}
-
-.buntoTabale:hover {
-  background-color: #3a9950;
-  overflow: hidden;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-}
-
-@media (max-width: 768px) {
-  /*indexMante*/
-  th,
-  td,
-  .optionValue {
-    padding: 3vw;
-    font-size: 3vw;
-    height: auto;
-  }
-}
-
-.optionValue:hover {
-  /*indexMante*/
-  background-color: #284b63;
-  color: #fff;
-}
-
-.LogoMante {
-  /*indexMante*/
-  width: 30vw;
-  max-width: 200px;
-  height: 10vw;
-  margin: 0 auto;
-  margin-top: 0vw;
-  border-radius: 3%;
-  background-color: rgba(40, 75, 99, 0.5);
-}
-
-@media (max-width: 768px) {
-  /*indexMante*/
-  .LogoMante {
-    width: 8vw;
-    max-width: 150px;
-    height: 8vw;
-    margin-top: 2vw;
-  }
-}
-
-/*ModalMante*/
-
-/*aqui*/
-/*Fin_Modal_Mante*/
-
-/*Prueba de ventana */
 .masInfobutton {
   border: 2px solid #65aaad;
   padding: 8px 18px;
@@ -1310,6 +1204,7 @@ tbody {
 .masInfobutton:hover {
   background: #162938;
 }
+
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -1331,20 +1226,18 @@ tbody {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   overflow: auto;
 }
-.modal-content2 {
-  background-color: white;
-  width: 35vw;
-  height: 100vh;
-  margin-top: 1vw;
-  padding: 20px;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  overflow: auto;
+
+.modal-content button {
+  padding: 9px 19px;
+  margin-left: 88%;
+  margin-bottom: 3px;
 }
+
 .buttonMas {
   float: right;
   margin-bottom: 10px;
 }
+
 .texh1Mo {
   text-align: center;
   font-size: 24px;
@@ -1352,12 +1245,13 @@ tbody {
   margin-top: 10px;
   margin-bottom: 15px;
 }
+
 .notaModal1 {
   margin-bottom: 15px;
   font-size: large;
   text-align: center;
 }
-.notaModal {
+.notaModal{
   margin-bottom: 20px;
   font-size: medium;
   text-align: center;
@@ -1368,12 +1262,143 @@ tbody {
   width: 25vw;
   margin-left: 3vw;
 }
+
 .DaModalExit {
   margin-top: 15px;
   margin-bottom: 16px;
   font-size: medium;
   text-align: center;
 }
+
+.buttonAcep {
+  margin-bottom: 10px;
+  font-size: medium;
+  text-align: center;
+  background: rgb(238, 230, 230, 0.5);
+  border: 2px solid #65aaad;
+  padding: 8px 18px;
+  border-radius: 5px;
+  width: 15vw;
+  margin-left: 8vw;
+}
+.buttonAcep:hover {
+  background-color: #45a049;
+  color: #f1f1f1;
+}
+
+
+
+@media (max-width: 768px) {
+  .masInfobutton{
+    width: 15vw;
+    margin-left: 3vw;
+    font-size: 8px;
+    text-align: center;
+  }
+}
+@media (max-width: 576px) {
+  .masInfobutton{
+    width: 15vw;
+    margin-left: 3vw;
+    font-size: 8px;
+    text-align: center;
+  }
+
+}
+
+
+/*css-AddModal*/
+.buttonSearchMant {
+  /*indexInve*/
+  padding: 4px 8px;
+  background-color: #353535;
+  font-family: "Josefin_Sans";
+  font-size: 20px;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-left: 77vw;
+  margin-top: 1vw;
+}
+
+.buttonSearchMant:hover {
+  /*indexInve*/
+  background: #3c6e71;
+}
+
+.modal-overlay2 {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  font-size: 14px;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  /*align-items: center;*/
+  margin-bottom: 45px;
+}
+
+.modal-content2 {
+  background-color: white;
+  width: 35vw;
+  height: 100vh;
+  margin-top: 1vw;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  overflow: auto;
+}
+@media (max-width: 768px) and (min-width: 280px) {
+
+
+  .modal-content1 {
+    display: flex;
+    flex-direction: column; /* Si deseas que los elementos estén uno debajo del otro */
+    align-items: center; /* Centra horizontalmente */
+    justify-content: center; /* Centra verticalmente */
+    width: 100vw;
+    height: 85vh;
+    margin-top: 3vw;
+    padding: 20px;
+    
+  }
+  .modal-content2 {
+    display: flex;
+    flex-direction: column; /* Si deseas que los elementos estén uno debajo del otro */
+    align-items: center; /* Centra horizontalmente */
+    justify-content: center; /* Centra verticalmente */
+    width: 100vw;
+    height: 85vh;
+    margin-top: 3vw;
+    padding: 20px;
+  }
+
+
+}
+
+.texh2Add {
+  margin-top: 5px;
+  margin-bottom: 10px;
+  font-size: medium;
+  text-align: center;
+}
+
+.impuh1Add {
+  margin-bottom: 8px;
+  font-size: medium;
+  text-align: center;
+  background: rgb(238, 230, 230, 0.5);
+  border: 2px solid #65aaad;
+  padding: 8px 18px;
+  border-radius: 5px;
+  width: 25vw;
+  margin-left: 3vw;
+}
+
 .optionValueAdd2 {
   /*indexMante*/
   color: #353535;
@@ -1392,8 +1417,6 @@ tbody {
   background-color: #284b63;
   color: #fff;
 }
-
-
 .buttonAcep {
   margin-bottom: 10px;
   font-size: medium;
@@ -1409,210 +1432,10 @@ tbody {
   background-color: #45a049;
   color: #f1f1f1;
 }
-@media (max-width: 768px) and (min-width: 280px) {
-  .modal-overlay {
-    background-color: rgba(0, 0, 0, 0.5);
-  }
+/*end-css-AddModal*/
 
-  .modal-content1 {
-    width: 100vw;
-    height: 105vh;
-    margin-top: 3vw;
-    padding: 20px;
-  }
+/*End css Mante-Julio*/
 
-  .modal-content2 {
-    width: 100vw;
-    height: 105vh;
-    margin-top: 3vw;
-    padding: 20px;
-  }
-
-  .notaModal {
-    width: 50vw;
-    margin-left: 3vw;
-  }
-
-  .DaModalExit {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    font-size: 16px;
-  }
-
-  .optionValueAdd2 {
-    width: 50vw;
-    margin-left: 3vw;
-  }
-
-  .buttonAcep {
-    width: 40vw;
-    margin-left: 5vw;
-  }
-}
-
- 
-
-
-.input-box .icon {
-  /*formulario*/
-  position: absolute;
-  right: 8px;
-  font-size: 1.2em;
-  color: #162938;
-  line-height: 57px;
-}
-
-.remember-forgot {
-  /*formulario*/
-  font-size: 0.9em;
-  color: #162938;
-  font-weight: 500;
-  margin: -15px 0 15px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.remember-forgot label input {
-  /*formulario*/
-  accent-color: #162938;
-  margin-right: 3px;
-}
-
-.remember-forgot a {
-  /*formulario*/
-  color: #162938;
-  text-decoration: none;
-}
-
-.remember-forgot a:hover {
-  /*formulario*/
-  text-decoration: underline;
-}
-
-.boton-desplegable {
-  /*formulario*/
-  position: relative;
-}
-
-.boton-desplegable .contenido-desplegado {
-  /*formulario*/
-  display: none;
-  padding: 10px;
-  background-color: #d9d9d9;
-
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  transition: height 0.3s ease;
-}
-
-.boton-desplegable.desplegado .contenido-desplegado {
-  /*formulario*/
-  display: block;
-}
-
-.butonCenter {
-  margin: 0 auto;
-  display: block;
-
-  background: #3a9950;
-  color: #d9d9d9;
-  display: block;
-  padding: 10px;
-  text-decoration: none;
-  border-radius: 4px;
-  margin-bottom: 5px;
-  font-family: "Josefine_Sans";
-  font-size: 18px;
-  text-align: center;
-  cursor: cell;
-}
-
-
-
-
-
-
-/* FIN dePrueba de ventana */
-
-/*Inicio 2*/
-
-.modal-overlay2 {
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 100%;
-  font-size: 14px;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  /*align-items: center;*/
-  margin-bottom: 45px;
-}
-
-.modal-content {
-  background-color: white;
-  width: 35vw;
-  height: 90vh;
-  margin-top: 2vw;
-  padding: 20px;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.modal-content h2 {
-  margin-top: 0;
-}
-
-.modal-content p {
-  margin-bottom: 20px;
-}
-
-.modal-content button {
-  padding: 9px 19px;
-  margin-left: 88%;
-  margin-bottom: 3px;
-}
-.impuh1Add {
-  margin-bottom: 8px;
-  font-size: medium;
-  text-align: center;
-  background: rgb(238, 230, 230, 0.5);
-  border: 2px solid #65aaad;
-  padding: 8px 18px;
-  border-radius: 5px;
-  width: 25vw;
-  margin-left: 3vw;
-}
-.texh2Add {
-  margin-top: 5px;
-  margin-bottom: 10px;
-  font-size: medium;
-  text-align: center;
-}
-.optionValueAdd {
-  /*indexMante*/
-  color: #353535;
-  background-color: #d9d9d9;
-  text-align: left;
-  font-family: "Josefin_Sans";
-  font-size: medium;
-  margin-bottom: 20px;
-  border-radius: 5px;
-  width: 20vw;
-  height: 5vh;
-}
-.optionValueAdd:hover {
-  /*indexMante*/
-  background-color: #284b63;
-  color: #fff;
-}
-
-/*Fin 2*/
 
 /*Paula*/
 .mt-5 {
