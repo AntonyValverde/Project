@@ -179,7 +179,7 @@ const TableMantee = () => {
                                 <th>Placa</th>
                                 <th>Fecha De Entrada</th>
                                 <th>Tipo De Mantenimiento</th>
-                                <th>Costo $</th>
+                                <th>Marca</th>
                                 <th>   </th>
                             </tr>
                         </thead>
