@@ -68,9 +68,7 @@ const Calendar = () => {
   const openModal = () => {
     setIsOpen(true);
   };
-  const closeModal = () => {
-    setIsOpen(false);
-  };
+
   useEffect(() => {
     const filtered = tdata.filter((data) =>
       Object.keys(data).some((key) =>
@@ -110,11 +108,12 @@ const Calendar = () => {
     setplacaa("");
     setFecha_Entrada("");
   };
-  /*The form is closed to click on the button and it is displayed.*/
   const handleCloseModal = () => {
-    setShowModal(false);
+    setIsOpen2(false);
     resetForm();
   };
+  /*The form is closed to click on the button and it is displayed.*/
+
   const handleSelectData = (data: any) => {
     setSelectedData(data);
   };
@@ -157,7 +156,7 @@ const Calendar = () => {
                       <form onSubmit={handleSubmit}>
                         <button
                           className=".modal-con button "
-                          onClick={closeModal}
+                          onClick={handleCloseModal}
                         >
                           X
                         </button>
@@ -190,8 +189,8 @@ const Calendar = () => {
                           placeholder=" General/Preventivo"
                         />
 
-                        <button className="buttonenviar" onClick={closeModal}>
-                          Aceptar
+                        <button className="buttonenviar" type="submit">
+                          Agregar
                         </button>
                       </form>
                     </div>
