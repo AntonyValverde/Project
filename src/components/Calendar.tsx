@@ -155,7 +155,7 @@ const Calendar = () => {
                         <div className="modal-contento">
                             <form onSubmit={handleSubmit}> 
                             <button className='.modal-con button ' onClick={closeModal}>X</button>
-                            <h1 className='textAdd'>  Numero De Placa:</h1>
+                            <h1 className='textAdd'>  Numero de Placa:</h1>
                             <input className='impAdd' type="text" id="placa"  value={placa} onChange={(e)=>setplacaa(e.target.value)} placeholder=' N° Placa' />
 
                             <h2 className='textAdd'> Fecha de Entrada</h2>
