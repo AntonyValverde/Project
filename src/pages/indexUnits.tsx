@@ -5,6 +5,7 @@ import { getFirestore, collection, getDocs, addDoc, query, where } from "@fireba
 import { RiCloseLine } from "react-icons/ri";
 import React, { useEffect, useState } from "react";
 import { uploadFile } from "@/firebase/configUnits";
+import Page_Head from "@/components/PageHead";
  
 export default function IndexUnits() {
 
@@ -134,9 +135,7 @@ export default function IndexUnits() {
     <div >
       <div className="cuadro">{/*El contenedor del header*/}
         <header >
-          <h1 className="etiqueta">
-            Unidades Disponibles
-          </h1>
+          <Page_Head></Page_Head>
         </header>
       </div>
       <div>{/*Todo el cuarpo de la app*/}

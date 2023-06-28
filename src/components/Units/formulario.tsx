@@ -48,6 +48,7 @@ const FormButton = () => {
     } catch (error) {
       console.error("Error adding data:", error);
     }
+    generarImagen();
   };
 
   const [desplegado, setDesplegado] = useState(false);
@@ -204,7 +205,7 @@ const FormButton = () => {
                       </label>
                       <button
                         className="btnLogin-popup" 
-                        onClick={generarImagen}
+                         
                       >
                         Registrar
                       </button>
