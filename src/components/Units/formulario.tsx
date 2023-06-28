@@ -8,6 +8,7 @@ import { useRef } from "react";
 import html2canvas from "html2canvas";
 import { saveAs } from "file-saver";
 import { initializeApp } from "firebase/app";
+import { useRouter } from 'next/router';
 
 const FormButton = () => {
   const [showModal, setShowModal] = useState(false);
@@ -36,12 +37,13 @@ const FormButton = () => {
       Año ,
       Estado , 
       Capacidad ,
-      Color 
+      Color,
+      Disponibilidad
     };
 
     try {
       const db = getFirestore();
-      await addDoc(collection(db, "Registro"), newData);
+      await addDoc(collection(db, "RegistroUnidades"), newData);
       setTableData([...tableData, newData]);
       handleCloseModal();
        
@@ -49,6 +51,13 @@ const FormButton = () => {
       console.error("Error adding data:", error);
     }
     generarImagen();
+    refrescarPagina();
+  };
+
+  const router = useRouter();
+
+  const refrescarPagina = () => {
+    router.reload();
   };
 
   const [desplegado, setDesplegado] = useState(false);
@@ -205,7 +214,6 @@ const FormButton = () => {
                       </label>
                       <button
                         className="btnLogin-popup" 
-                         
                       >
                         Registrar
                       </button>
