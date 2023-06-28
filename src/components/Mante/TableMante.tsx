@@ -185,7 +185,7 @@ const TableMantee = () => {
                                                             {/*<h1 className='DaModalExit'>   Tipo de Servicio: <h2 className='notaModal'>{dataIn.especificacion}</h2> </h1>*/}
 
                                                             <h1 className='DaModalExit'> Materiales Utiizados <h2 className='notaModal'>{data.Modelo}</h2> </h1>
-                                                            <button className='buttonAcep' onClick={closeModal}>Aceptar</button>
+                                                            <button className='buttonAcep2' onClick={closeModal}>Aceptar</button>
                                                         </div>
                                                     </div>
                                                 )}
@@ -258,7 +258,7 @@ const TableMantee = () => {
                                         onChange={(e) => setRepuestos(e.target.value)}
                                         placeholder=' ' />
 
-                                    <button className='buttonAcep' type="submit">Aceptar</button>
+                                    <button className='buttonAcep1' type="submit">Aceptar</button>
                                 </form>
                             </div>
 

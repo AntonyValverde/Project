@@ -911,7 +911,6 @@ body.dark {
 .buttonB:hover {
   background-color: #45a049;
 }
-
 /*Mantenimiento julio */
 
 .containerTable2 {
@@ -1023,15 +1022,12 @@ body.dark {
   justify-content: center;
   align-items: center;
 }
+
 .modal-content1 {
-  background-color: white;
-  width: 35vw;
-  height: 85vh;
-  margin-top: 4vw;
+  width: 100vw;
+  height: 105vh;
+  margin-top: 3vw;
   padding: 20px;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  overflow: auto;
 }
 
 .modal-content button {
@@ -1159,32 +1155,15 @@ body.dark {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   overflow: auto;
 }
-@media (max-width: 768px) and (min-width: 280px) {
-
-
-  .modal-content1 {
-    display: flex;
-    flex-direction: column; /* Si deseas que los elementos estén uno debajo del otro */
-    align-items: center; /* Centra horizontalmente */
-    justify-content: center; /* Centra verticalmente */
-    width: 100vw;
-    height: 85vh;
-    margin-top: 3vw;
-    padding: 20px;
-    
-  }
-  .modal-content2 {
-    display: flex;
-    flex-direction: column; /* Si deseas que los elementos estén uno debajo del otro */
-    align-items: center; /* Centra horizontalmente */
-    justify-content: center; /* Centra verticalmente */
-    width: 100vw;
-    height: 85vh;
-    margin-top: 3vw;
-    padding: 20px;
-  }
-
-
+.modal-content1 {
+  background-color: white;
+  width: 35vw;
+  height: 85vh;
+  margin-top: 4vw;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  overflow: auto;
 }
 
 .texh2Add {
@@ -1224,8 +1203,7 @@ body.dark {
   background-color: #284b63;
   color: #fff;
 }
-
-.buttonAcep {
+.buttonAcep1 {
   margin-bottom: 10px;
   font-size: medium;
   text-align: center;
@@ -1236,123 +1214,170 @@ body.dark {
   width: 15vw;
   margin-left: 8vw;
 }
-.buttonAcep:hover {
+.buttonAcep1:hover {
   background-color: #45a049;
   color: #f1f1f1;
 }
-/*end-css-AddModal*/
-
-/*End css Mante-Julio*/
-
-
-  .modal-content2 {
-    width: 100vw;
-    height: 105vh;
-    margin-top: 3vw;
-    padding: 20px;
-  }
-
-  .notaModal {
-    width: 50vw;
-    margin-left: 3vw;
-  }
-
-  .DaModalExit {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    font-size: 16px;
-  }
-
-  .optionValueAdd2 {
-    width: 50vw;
-    margin-left: 3vw;
-  }
-
-  .buttonAcep {
-    width: 40vw;
-    margin-left: 5vw;
-  }
-
-
-/* FIN dePrueba de ventana */
-
-/*Inicio 2*/
-
-.modal-overlay2 {
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 100%;
-  font-size: 14px;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  /*align-items: center;*/
-  margin-bottom: 45px;
-}
-
-.modal-content {
-  background-color: white;
-  width: 35vw;
-  height: 90vh;
-  margin-top: 2vw;
-  padding: 20px;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.modal-content h2 {
-  margin-top: 0;
-}
-
-.modal-content p {
-  margin-bottom: 20px;
-}
-
-.modal-content button {
-  padding: 9px 19px;
-  margin-left: 88%;
-  margin-bottom: 3px;
-}
-.impuh1Add {
-  margin-bottom: 8px;
+.buttonAcep2 {
+  margin-bottom: 10px;
   font-size: medium;
   text-align: center;
   background: rgb(238, 230, 230, 0.5);
   border: 2px solid #65aaad;
   padding: 8px 18px;
   border-radius: 5px;
-  width: 25vw;
-  margin-left: 3vw;
+  width: 15vw;
+  margin-left: 8vw;
 }
-.texh2Add {
-  margin-top: 5px;
-  margin-bottom: 10px;
-  font-size: medium;
-  text-align: center;
-}
-.optionValueAdd {
-  /*indexMante*/
-  color: #353535;
-  background-color: #d9d9d9;
-  text-align: left;
-  font-family: "Josefin_Sans";
-  font-size: medium;
-  margin-bottom: 20px;
-  border-radius: 5px;
-  width: 20vw;
-  height: 5vh;
-}
-.optionValueAdd:hover {
-  /*indexMante*/
-  background-color: #284b63;
-  color: #fff;
+.buttonAcep2:hover {
+  background-color: #45a049;
+  color: #f1f1f1;
 }
 
-/*Fin 2*/
+@media (max-width: 768px) and (min-width: 280px) {
+
+  .modal-content1 {
+    display: flex;
+    flex-direction: column; /* Si deseas que los elementos estén uno debajo del otro */
+    align-items: center; /* Centra horizontalmente */
+    justify-content: center; /* Centra verticalmente */
+  
+    width: 100vw;
+    height: 85vh;
+    margin-top: 20vw;
+    padding: 20px;
+  }
+  .modal-content2 {
+    display: flex;
+    flex-direction: column; /* Si deseas que los elementos estén uno debajo del otro */
+    align-items: center; /* Centra horizontalmente */
+    justify-content: center; /* Centra verticalmente */
+  
+    width: 100vw;
+    height: 85vh;
+    margin-top: 20vw;
+    padding: 20px;
+  }
+  .notaModal {
+    width: 50vw;
+    margin-left: 3vw;
+  }
+  .impuh1Add{
+    width: 50vw;
+    margin-left: 20vw;
+
+  }
+  .DaModalExit {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+  .buttonAcep1 {
+    width: 40vw;
+    margin-left: 25vw;
+  }
+  .buttonAcep2 {
+    width: 40vw;
+    margin-left:5vw;
+  }
+  
+
+  .optionValueAdd2 {
+    width: 50vw;
+    margin-left: 3vw;
+  }
+  .masInfobutton{
+    width: 20vw;
+    margin-left: 3vw;
+    font-size: 8px;
+    text-align: center;
+  }
+}
+
+
+
+
+/*end-css-AddModal*/
+/*ventana Modal*/
+
+.input-box .icon {
+  /*formulario*/
+  position: absolute;
+  right: 8px;
+  font-size: 1.2em;
+  color: #162938;
+  line-height: 57px;
+}
+
+.remember-forgot {
+  /*formulario*/
+  font-size: 0.9em;
+  color: #162938;
+  font-weight: 500;
+  margin: -15px 0 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.remember-forgot label input {
+  /*formulario*/
+  accent-color: #162938;
+  margin-right: 3px;
+}
+
+.remember-forgot a {
+  /*formulario*/
+  color: #162938;
+  text-decoration: none;
+}
+
+.remember-forgot a:hover {
+  /*formulario*/
+  text-decoration: underline;
+}
+
+.boton-desplegable {
+  /*formulario*/
+  position: relative;
+}
+
+.boton-desplegable .contenido-desplegado {
+  /*formulario*/
+  display: none;
+  padding: 10px;
+  background-color: #d9d9d9;
+
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  transition: height 0.3s ease;
+}
+
+.boton-desplegable.desplegado .contenido-desplegado {
+  /*formulario*/
+  display: block;
+}
+
+.butonCenter {
+  margin: 0 auto;
+  display: block;
+
+  background: #3a9950;
+  color: #d9d9d9;
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  border-radius: 4px;
+  margin-bottom: 5px;
+  font-family: "Josefine_Sans";
+  font-size: 18px;
+  text-align: center;
+  cursor: cell;
+}
+
+/*End css Mante-Julio*/
+
 
 /*Paula*/
 .mt-5 {
