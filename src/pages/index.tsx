@@ -22,23 +22,23 @@ export default function Home() {
         <div className="column">
           <h3 className="title">Register Units</h3>
           <img className="images" src="/img/unidades.png" alt="Not Found" />
-          <hr />
           <Link href="/indexUnits" className="button">
             Registro Unidades
           </Link>
         </div>
+
         <div className="column">
           <h3 className="title">Date Units</h3>
           <img className="images" src="/img/calendario.png" alt="Not Found" />
-          <hr />
           <Link href="/indexCita" className="button">
             Citas Unidades
           </Link>
         </div>
+
         <div className="column">
           <h3 className="title">Maintenance Units</h3>
           <img className="images" src="/img/reparacion.png" alt="Not Found" />
-          <hr />
+
           <Link href="/indexMante" className="button">
             Mantenimiento Unidades
           </Link>
@@ -47,7 +47,6 @@ export default function Home() {
         <div className="column">
           <h3 className="title">Spare Parts Inventary</h3>
           <img className="images" src="/img/ajuste.png" alt="Not Found" />
-          <hr />
           <Link href="/indexInven" className="button">
             Inventario Repuesto
           </Link>

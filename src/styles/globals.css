@@ -40,7 +40,7 @@ body.dark {
   border: 1px solid #333;
   margin: 1%;
   margin-bottom: 1%;
-  margin-top: 9%;
+  margin-top: 3%;
   padding: 0.8%;
   border-radius: 8px;
   box-shadow: 8px 8px 5px #888;
@@ -272,8 +272,8 @@ body.dark {
 .title2 {
   /*Nav*/
   font-family: "Josefin_Sans";
-  background-color: transparent;
-  color: #454545;
+  background-color: #3c6e71;
+  color: #d9d9d9;
   font-size: 45px;
   margin-top: 10px;
   padding-top: 15px;
@@ -329,20 +329,23 @@ body.dark {
 .dark-mode .title2 {
   color: #d9d9d9;
 }
+.dark-mode .title2 {
+  background-color: transparent;
+}
 
-.dark-mode .contenido-desplegado{
+.dark-mode .contenido-desplegado {
   background-color: #3a3b3c;
 }
 
-.dark-mode .boton-desplegable{
+.dark-mode .boton-desplegable {
   background-color: #3a3b3c;
 }
 
-.dark-mode .containerTwo{
+.dark-mode .containerTwo {
   background-color: #3a3b3c;
 }
 
-.dark-mode .wrapper{
+.dark-mode .wrapper {
   background-color: #3a3b3c;
 }
 
@@ -371,7 +374,6 @@ body.dark {
     margin: 0 auto;
   }
 }
-
 
 .description {
   font-family: "Josefin_Sans";
@@ -552,7 +554,6 @@ body.dark {
 .flip-container.flipped .flipper {
   transform: rotateY(180deg);
 }
-
 
 .titul2 {
   float: right;
@@ -887,8 +888,6 @@ tbody {
     margin-left: 5vw;
   }
 }
-
-
 
 /* FIN dePrueba de ventana */
 
