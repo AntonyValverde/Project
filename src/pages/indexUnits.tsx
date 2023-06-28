@@ -6,6 +6,7 @@ import { RiCloseLine } from "react-icons/ri";
 import React, { useEffect, useState } from "react";
 import { uploadFile } from "@/firebase/configUnits";
 import Page_Head from "@/components/PageHead";
+import { useRouter } from 'next/router';
  
 export default function IndexUnits() {
 
@@ -122,14 +123,20 @@ export default function IndexUnits() {
         await addDoc(collection(db, "photosUnits"), newData);
         setTableData([...tableData, newData]);
         handleCloseModal();
-
+        refrescarPagine();
       } catch (error) {
         console.error("Error adding data:", error);
       }
     } else {
       console.log("No has ingresado ningún dato.");
     }
+    
   }
+  const router = useRouter();
+
+  const refrescarPagine = () => {
+    router.reload();
+  };
 
   return (
     <div >

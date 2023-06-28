@@ -101,25 +101,28 @@ const TableMantee = () => {
         setFilteredData(filtered);
     }, [filterValue, docsDbBUs]);
 
-   
+    const handleFilterChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const { value } = event.target as HTMLInputElement;
+        setFilterValue(value);
+        setFilterValue2(value);
+    };
     /* End Data is filtered in real time with the database */
 
-    /* Data is filtered in real time with the database */
-    useEffect(() => {
-        const filtered2 = docsDbIn.filter((data) =>
-            Object.keys(data).some((key) =>
-                data[key].toString().toLowerCase().includes(filterValue2.toLowerCase())
-            )
-        );
-        setFilteredData2(filtered2);
-    }, [filterValue2, docsDbIn]);
+ /* Data is filtered in real time with the database */
+ useEffect(() => {
+    const filtered = docsDbIn.filter((data) =>
+        Object.keys(data).some((key) =>
+            data[key].toString().toLowerCase().includes(filterValue2.toLowerCase())
+        )
+    );
+    setFilteredData2(filtered);
+}, [filterValue2, docsDbIn]);
 
-const handleFilterChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const { value } = event.target as HTMLInputElement;
-    setFilterValue(value);
-    setFilterValue2(value);
-};
 /* End Data is filtered in real time with the database */
+
+
+
+
 
     /* Add data to the database with the modal */
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
