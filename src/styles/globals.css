@@ -1518,3 +1518,122 @@ tbody {
   margin-left: 3%;
   border-radius: 8px;
 }
+.Citass{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.addCita {
+
+  font-family: "Josefin_Sans";
+  font-size: 25px;
+  margin-inline: 10.8%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+ margin-left: 40%;
+  background-color: #212529;
+  border-radius: 8px;
+  color: #ffff;
+}
+.modal-contento {
+  background-color: white;
+  width: 35vw;
+  height: 55vh;
+  margin-top: 2vw;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.modal-contento h2 {
+  margin-top: 0;
+}
+
+.modal-contento p {
+  margin-bottom: 20px;
+}
+
+.modal-contento button {
+  padding: 9px 19px;
+  margin-left: 88%;
+  margin-bottom: 3px;
+}
+.impAdd {
+  margin-bottom: 8px;
+  font-size: medium;
+  text-align: center;
+  background: rgb(238, 230, 230, 0.5);
+  border: 2px solid #212529;
+  padding: 8px 18px;
+  border-radius: 5px;
+  width: 25vw;
+  margin-left: 3vw;
+}
+.textAdd {
+  margin-top: 5px;
+  margin-bottom: 10px;
+  font-size: medium;
+  text-align: center;
+}
+.option {
+  
+  color: #353535;
+  background-color: #d9d9d9;
+  text-align: left;
+  font-family: "Josefin_Sans";
+  font-size: medium;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  width: 20vw;
+  height: 5vh;
+}
+.option:hover {
+  
+  background-color:#212529;
+  color: #fff;
+}
+.buttonenviar {
+  margin-bottom: 10px;
+  font-size: medium;
+  text-align: center;
+  background: rgb(238, 230, 230, 0.5);
+  border: 2px solid #212529;
+  padding: 8px 18px;
+  border-radius: 5px;
+  width: 15vw;
+  margin-left: 8vw;
+}
+.buttonenviar:hover {
+  background-color:  #3c6e71;
+  color: #f1f1f1;
+}
+.modal-con button {
+  padding: 9px 19px;
+  margin-left: 88%;
+  margin-bottom: 3px;
+  background-color:  #3c6e71;
+}
+.optionAdd2 {
+  /*indexMante*/
+  color: #fff;;
+  background-color: #212529;
+  text-align: left;
+  font-family: "Josefin_Sans";
+  font-size: medium;
+  margin-bottom: 5px;
+  margin-left: 6vw;
+  border-radius: 5px;
+  width: 20vw;
+  height: 5vh;
+}
+.optionAdd2:hover {
+  /*indexMante*/
+  background-color:  #212529;
+  color: #fff;
+}
