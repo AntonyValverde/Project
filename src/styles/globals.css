@@ -272,8 +272,8 @@ body.dark {
 .title2 {
   /*Nav*/
   font-family: "Josefin_Sans";
-  background-color: #3c6e71;
-  color: #d9d9d9;
+  background-color: transparent;
+  color: #454545;
   font-size: 45px;
   margin-top: 10px;
   padding-top: 15px;
@@ -289,7 +289,7 @@ body.dark {
   width: 720px;
   height: 260px;
   margin-inline: 25%;
-  margin-top: 15px;
+  margin-top: 0.5%;
   border-radius: 3%;
 }
 .dark-mode-button {
@@ -324,7 +324,10 @@ body.dark {
 
 .dark-mode .column {
   background-color: #333333;
-  color: #ffffff;
+  color: #d9d9d9;
+}
+.dark-mode .title2 {
+  color: #d9d9d9;
 }
 
 /* Responsive Styles Nav*/
