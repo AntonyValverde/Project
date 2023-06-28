@@ -13,7 +13,6 @@ import {
   getDocs,
   addDoc,
   updateDoc,
-  serverTimestamp,
   doc,
 } from "firebase/firestore";
 import firebaseConfig from "@/firebase/config";
@@ -34,11 +33,10 @@ const TableForm = () => {
 
   /*Initialize firebase*/
   const app = initializeApp(firebaseConfig);
-
+  const db = getFirestore(app);
   /* The data from the database is consumed */
   useEffect(() => {
     const fetchData = async () => {
-      const db = getFirestore();
       try {
         const querydb = await getDocs(collection(db, "Inventario"));
         const data = querydb.docs.map((doc) => ({
@@ -121,48 +119,50 @@ const TableForm = () => {
   };
   const handleUpdateData = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (selectedData) {
+      const updatedData = {
+        id: Number(id),
+        repuesto: String(repuesto),
+        especificacion: String(especificacion),
+        cantidad: parseInt(cantidad),
+        precio: parseInt(precio),
+      };
 
-    const updatedData = {
-      id: Number(id),
-      repuesto: String(repuesto),
-      especificacion: String(especificacion),
-      cantidad: Number(cantidad),
-      precio: Number(precio),
-    };
-
-    try {
-      const db = getFirestore();
-      await updateDoc(doc(db, "Inventario", selectedData.id), updatedData);
-      const updatedTableData = tableData.map((data) =>
-        data.id === selectedData.id ? updatedData : data
-      );
-      setTableData(updatedTableData);
-      handleCloseModal();
-      resetForm();
-      setShowAlert(true);
-    } catch (error) {
-      console.error("Error al actualizar los datos:", error);
+      try {
+        const db = getFirestore();
+        await updateDoc(doc(db, "Inventario", selectedData.id), updatedData);
+        const updatedTableData = tableData.map((data) =>
+          data.id == selectedData.id ? updatedData : data
+        );
+        setTableData(updatedTableData);
+        handleCloseModal();
+        resetForm();
+        setShowAlert(true);
+      } catch (error) {
+        console.error("Error al actualizar los datos:", error);
+      }
     }
   };
+
   return (
     <>
       <div>
         {/*The modal is created with the inputs and the methods are passed to it.*/}
 
         {showModal && (
-          <div className="modalForm">
-            <div className="modal-contentForm">
+          <div className="formModal">
+            <div className="contentForm-modal">
               <span className="closeForm" onClick={handleCloseModal}>
                 &times;
               </span>
-              <label className="labelmodal" htmlFor="repuesto">
+              <label className="labelModal" htmlFor="repuesto">
                 <span className="iconForm">
                   <RiFileList3Line />
                 </span>
                 Form Agregar Repuesto
               </label>
               <form onSubmit={handleSubmit}>
-                <label className="labelform" htmlFor="repuesto">
+                <label className="labelForm" htmlFor="repuesto">
                   ID:
                 </label>
                 <input
@@ -174,7 +174,7 @@ const TableForm = () => {
                   required
                 />
 
-                <label className="labelform" htmlFor="repuesto">
+                <label className="labelForm" htmlFor="repuesto">
                   Repuesto:
                 </label>
                 <input
@@ -186,7 +186,7 @@ const TableForm = () => {
                   required
                 />
 
-                <label className="labelform" htmlFor="especificacion">
+                <label className="labelForm" htmlFor="especificacion">
                   Especificación:
                 </label>
                 <input
@@ -198,7 +198,7 @@ const TableForm = () => {
                   required
                 />
 
-                <label className="labelform" htmlFor="cantidad">
+                <label className="labelForm" htmlFor="cantidad">
                   Cantidad:
                 </label>
                 <input
@@ -210,7 +210,7 @@ const TableForm = () => {
                   required
                 />
 
-                <label className="labelform" htmlFor="precio">
+                <label className="labelForm" htmlFor="precio">
                   Precio:
                 </label>
                 <input
@@ -234,7 +234,8 @@ const TableForm = () => {
                   </span>
                   Cancelar
                 </button>
-
+              </form>
+              <form onSubmit={handleUpdateData}>
                 <button className="buttonUpdate" type="submit">
                   <span className="updateIcon">
                     <RiEditLine />

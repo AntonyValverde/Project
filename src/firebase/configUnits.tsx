@@ -20,7 +20,7 @@ export const uploadFile = (
 
 ): Promise<string> => {
 
-    const path = `PhotosUnits/$(file.name`+dato+`)` ;
+    const path = `PhotosUnits/$(file.name` + dato + `)`;
     const storageRef = ref(storage, path);
     const uploadTask = uploadBytesResumable(storageRef, file);
     return new Promise((res, rej) => {
@@ -30,7 +30,7 @@ export const uploadFile = (
             () => rej(null),
             () => {
                 getDownloadURL(uploadTask.snapshot.ref).then((downloandURL: string) => {
-                     res(downloandURL) 
+                    res(downloandURL)
                 })
             }
         )
