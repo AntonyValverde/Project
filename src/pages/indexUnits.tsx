@@ -1,5 +1,4 @@
 import FormButton from "@/components/Units/formulario";
-import ModalUnits from "@/components/Units/ModalUnits";
 import "firebase/firestore";
 import "firebase/compat/firestore";
 import { getFirestore, collection, getDocs, addDoc, query, where } from "@firebase/firestore";
@@ -63,10 +62,10 @@ export default function IndexUnits() {
 
     return (
       <div style={{ display: estado ? 'block' : 'none' }}>  
-        <div className="modalForm">
-          <section className="modal-contentForm">
+        <div className="modalForme">
+          <section className="modal-contentForme">
             <button onClick={() => cambiarEstado(false)}>
-              <span className="IconCancel">
+              <span className="IconCancele">
                 <RiCloseLine />
               </span>
             </button>

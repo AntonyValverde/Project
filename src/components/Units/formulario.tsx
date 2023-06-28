@@ -1,11 +1,13 @@
 import React, { FormEvent, useEffect, useState } from "react";
 import "firebase/firestore";
+import firebaseConfig from "@/firebase/config";
 import "firebase/compat/firestore";
 import { getFirestore, collection, getDocs, addDoc } from "firebase/firestore";
 import Page_Footer from "../PageFooter";
 import { useRef } from "react";
 import html2canvas from "html2canvas";
 import { saveAs } from "file-saver";
+import { initializeApp } from "firebase/app";
 
 const FormButton = () => {
   const [showModal, setShowModal] = useState(false);
@@ -20,25 +22,26 @@ const FormButton = () => {
   const [Disponibilidad, setDisponibilidad] = useState("");
   const [tableData, setTableData] = useState<any[]>([]);
 
+  const app = initializeApp(firebaseConfig);
+
   /* Add data to the database with the modal */
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const newData = {
-      Unidad,
-      Placa,
-      Modelo,
-      Marca,
-      Año,
-      Estado, 
-      Capacidad,
-      Color,
-      Disponibilidad
+      Unidad ,
+      Placa ,
+      Modelo ,
+      Marca ,
+      Año ,
+      Estado , 
+      Capacidad ,
+      Color 
     };
 
     try {
       const db = getFirestore();
-      await addDoc(collection(db, "RegistroUnidades"), newData);
+      await addDoc(collection(db, "Registro"), newData);
       setTableData([...tableData, newData]);
       handleCloseModal();
        
@@ -81,7 +84,7 @@ const FormButton = () => {
   return (
     <div>
       <div>
-        <button className="butonCenter" onClick={botonClick}>
+        <button className="file-upload-button" onClick={botonClick}>
           Agregar
         </button>
       </div>
