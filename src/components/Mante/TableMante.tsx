@@ -46,7 +46,7 @@ const TableMantee = () => {
 
     const handleCloseAlert = () => {
         setShowAlert(false);
-      };
+    };
 
     useEffect(() => {
         /* Consuminedo los dato de Bd */
@@ -57,7 +57,7 @@ const TableMantee = () => {
                 const querydb = await getDocs(collection(db, "RegistroUnidades"));
                 const data = querydb.docs.map((doc) => ({
                     id: doc.id,
-                    ...doc.data(),  
+                    ...doc.data(),
                 }));
 
                 console.log('Data:', data);
@@ -76,9 +76,9 @@ const TableMantee = () => {
             const db = getFirestore();
             try {
                 const querydb = await getDocs(collection(db, "Quotes"));
-                const dataIn  = querydb.docs.map((doc) => ({
+                const dataIn = querydb.docs.map((doc) => ({
                     id: doc.id,
-                    ...doc.data(),  
+                    ...doc.data(),
                 }));
 
                 console.log('Data:', dataIn);
@@ -108,17 +108,17 @@ const TableMantee = () => {
     };
     /* End Data is filtered in real time with the database */
 
- /* Data is filtered in real time with the database */
- useEffect(() => {
-    const filtered = docsDbIn.filter((data) =>
-        Object.keys(data).some((key) =>
-            data[key].toString().toLowerCase().includes(filterValue2.toLowerCase())
-        )
-    );
-    setFilteredData2(filtered);
-}, [filterValue2, docsDbIn]);
+    /* Data is filtered in real time with the database */
+    useEffect(() => {
+        const filtered = docsDbIn.filter((data) =>
+            Object.keys(data).some((key) =>
+                data[key].toString().toLowerCase().includes(filterValue2.toLowerCase())
+            )
+        );
+        setFilteredData2(filtered);
+    }, [filterValue2, docsDbIn]);
 
-/* End Data is filtered in real time with the database */
+    /* End Data is filtered in real time with the database */
 
 
 
@@ -185,40 +185,40 @@ const TableMantee = () => {
                         </thead>
                         <tbody>
 
-                            {filteredData2.map((dataIn)=>filteredData.map((data)=>   (
+                            {filteredData2.map((dataIn, index2) => filteredData.map((data, index) => (
 
-                                <tr key={data.id && dataIn.id}
+                                <tr key={`${data.Unidad}-${index}-${dataIn.id}-${index2}`}
                                 >
                                     <td>{data.Unidad}</td>
                                     <td>{data.Placa}</td>
                                     <td>{dataIn.Fecha_Entrada}</td>
                                     <td>{dataIn.Asunto}</td>
                                     <td>{data.Marca}</td>
+                                    <td>
+                                        <button className='masInfobutton' onClick={openModal}>Más información</button>
+                                    </td>
+                                    {isOpen && (
 
-                                            <div>
-                                                <button className='masInfobutton' onClick={openModal}>Más información</button>
-                                                {isOpen && (
+                                        <div className="modal-overlay">
 
-                                                    <div className="modal-overlay">
+                                            <div className="modal-content1">
+                                                <button className='.modal-content button buttonMas' onClick={closeModal}>X</button>
 
-                                                        <div className="modal-content1">
-                                                            <button className='.modal-content button buttonMas' onClick={closeModal}>X</button>
+                                                <h1 className='texh1Mo'> Más Información</h1>
 
-                                                            <h1 className='texh1Mo'> Más Información</h1>
+                                                <p className='notaModal1'> Reporte General</p>
+                                                <p className='notaModal'>{data.Color}</p>
 
-                                                            <p className='notaModal1'> Reporte General</p>
-                                                            <p className='notaModal'>{data.Color}</p>
+                                                <h1 className='DaModalExit'> Fecha de salida: <h2 className='notaModal'>{dataIn.placa} </h2> </h1>
 
-                                                            <h1 className='DaModalExit'> Fecha de salida: <h2 className='notaModal'>{dataIn.placa} </h2> </h1>
+                                                <h1 className='DaModalExit'> Estado: <h2 className='notaModal'>{data.Disponibilidad}</h2></h1>
 
-                                                            <h1 className='DaModalExit'> Estado: <h2 className='notaModal'>{data.Disponibilidad}</h2></h1>
-
-                                                            <h1 className='DaModalExit'> Materiales Utiizados <h2 className='notaModal'>{data.Modelo}</h2> </h1>
-                                                            <button className='buttonAcep2' onClick={closeModal}>Aceptar</button>
-                                                        </div>
-                                                    </div>
-                                                )}
+                                                <h1 className='DaModalExit'> Materiales Utiizados <h2 className='notaModal'>{data.Modelo}</h2> </h1>
+                                                <button className='buttonAcep2' onClick={closeModal}>Aceptar</button>
                                             </div>
+                                        </div>
+                                    )}
+
                                 </tr>
                             )))}
                         </tbody>
@@ -247,16 +247,16 @@ const TableMantee = () => {
                                         id="numPlaca"
                                         value={numPlaca}
                                         onChange={(e) => setNumPlaca(e.target.value)}
-                                        placeholder=' N° Placa'/>
+                                        placeholder=' N° Placa' />
 
                                     <h2 className='texh2Add' > Fecha De Salida</h2>
                                     <input className='impuh1Add'
                                         id="fecha_salida"
                                         value={fecha_salida}
                                         onChange={(e) => setFechaSalida(e.target.value)}
-                                        type="date" 
-                                       />
-                                        
+                                        type="date"
+                                    />
+
 
                                     <h2 className='texh2Add'> Reporte General</h2>
                                     <input className='impuh1Add'
@@ -264,7 +264,7 @@ const TableMantee = () => {
                                         id="reporte"
                                         value={reporte}
                                         onChange={(e) => setReporte(e.target.value)}
-                                        placeholder=' Se cambio....'/>
+                                        placeholder=' Se cambio....' />
 
 
                                     <h2 className='texh2Add' > Costo</h2>
@@ -291,16 +291,16 @@ const TableMantee = () => {
 
                     )}
                     {showAlert && (
-            <div className="alert-popup show">
-            <p className="alert-message">
-              Los datos se han agregado correctamente
-            </p>
-            <span className="alert-close" onClick={handleCloseAlert}>
-              &times;
-            </span>
-          </div>
+                        <div className="alert-popup show">
+                            <p className="alert-message">
+                                Los datos se han agregado correctamente
+                            </p>
+                            <span className="alert-close" onClick={handleCloseAlert}>
+                                &times;
+                            </span>
+                        </div>
 
-        )}
+                    )}
                 </div>
 
             </div>

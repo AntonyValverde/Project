@@ -1004,6 +1004,9 @@ body.dark {
   border-radius: 5px;
   color: #000;
   width: 12vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .masInfobutton:hover {
   background: #162938;
@@ -1097,7 +1100,7 @@ body.dark {
 }
 @media (max-width: 576px) {
   .masInfobutton {
-    width: 15vw;
+    width: 20vw;
     margin-left: 3vw;
     font-size: 8px;
     text-align: center;
