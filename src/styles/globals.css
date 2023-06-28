@@ -914,12 +914,12 @@ body.dark {
 /*Mantenimiento julio */
 
 .containerTable2 {
-  max-height: 300px;
+  max-height: 350px;
   overflow-y: auto;
-  margin-top: 10px; /* Espacio superior */
+  margin-top: 45px; /* Espacio superior */
   margin-bottom: 10px; /* Espacio inferior */
   padding-right: 10px;
-  background-color: #162938;
+  
 }
 .search-container {
   margin-left: 1%;
